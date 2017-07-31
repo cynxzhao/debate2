@@ -509,6 +509,7 @@ class AllNewsTableViewController: UITableViewController {
             }
             
             self.tableView.reloadData()
+            //jjjj
         }
     }
     
