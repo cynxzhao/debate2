@@ -78,7 +78,7 @@ class DetailedAllNewsViewController: UIViewController, UIWebViewDelegate {
     }
     
     @IBAction func saveTapped(_ sender: UIButton) {
-        NewsService.save(userID: User.current.uid, title: news!.title, date: news!.date, url: news!.url) { (news) in
+        NewsService.save(userID: User.current.uid, title: news!.title, date: news!.date, url: news!.url, imageURL: news!.imageURL!) { (news) in
             guard let news = news else { return }
         }
     }

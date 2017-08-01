@@ -14,4 +14,6 @@ pod 'FirebaseUI/Auth'
 pod ‘Firebase/Database’
 pod 'MBProgressHUD', '~> 1.0.0'
 pod 'TagListView', '~> 1.0'
+pod 'AFNetworking', '~> 3.0'
+
 end

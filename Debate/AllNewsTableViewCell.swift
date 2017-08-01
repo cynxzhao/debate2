@@ -12,10 +12,18 @@ class AllNewsTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
 //    @IBOutlet weak var urlLabel: UILabel!
+    @IBOutlet weak var image1: UIImageView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.image1.image = nil
+        // Set cell to initial state here, reset or set values
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

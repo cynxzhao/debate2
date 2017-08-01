@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import AFNetworking
 
 class SentNewsTableViewController: UITableViewController {
 
@@ -15,11 +16,21 @@ class SentNewsTableViewController: UITableViewController {
     var news = [News]()
     var filteredNews = [News]()
     
+    @IBOutlet weak var barButton: UIBarButtonItem!
+    
     let searchController = UISearchController(searchResultsController: nil)
 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+         UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Georgia", size: 17)!], for: .normal)
+        
+        //changes color of bar button and navigation controller
+        barButton.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Georgia", size: 17)!], for: UIControlState.normal)
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Georgia", size: 20)!]
+        
         
         let ref = Database.database().reference().child("groups").child(group!.id).child("news")
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -49,6 +60,7 @@ class SentNewsTableViewController: UITableViewController {
         searchController.searchResultsUpdater = self as! UISearchResultsUpdating
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
+        searchController.searchBar.placeholder = "Search by tags"
         tableView.tableHeaderView = searchController.searchBar
 
         self.navigationItem.title = group!.groupName
@@ -113,6 +125,15 @@ class SentNewsTableViewController: UITableViewController {
             allTags += "\(tag) "
         }
         cell.tagsLabel.text = allTags
+        
+        if new.imageURL != "" {
+            let picURL = URL(string: (new.imageURL)!)!
+            cell.image1.setImageWith(picURL)
+        } else {
+            let picURL = URL(string : "https://static.pexels.com/photos/242236/pexels-photo-242236.jpeg")
+            cell.image1.setImageWith(picURL!)
+        }
+        
         
         let ref = Database.database().reference().child("users").child(new.sender!).child("username")
         

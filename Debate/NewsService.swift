@@ -15,15 +15,16 @@ import Alamofire
 import SwiftyJSON
 
 struct NewsService {
-    static func create(group: Group, title: String, date: String, url: String, tags: [String], sender: User, completion: @escaping (News?) -> Void) {
+    static func create(group: Group, title: String, date: String, url: String, tags: [String], sender: User, imageURL: String, completion: @escaping (News?) -> Void) {
         let newsAttr = ["title": title,
                         "date": date,
                         "url" : url,
                         "tags": tags,
-                        "sender": sender.uid] as [String : Any]
-
+                        "sender": sender.uid,
+                        "imageURL": imageURL] as [String : Any]
         
-    let ref = Database.database().reference().child("groups").child(group.id).child("news").childByAutoId()
+        
+        let ref = Database.database().reference().child("groups").child(group.id).child("news").childByAutoId()
         ref.updateChildValues(newsAttr) { (error, ref) in
             
             
@@ -37,13 +38,14 @@ struct NewsService {
                 completion(news)
             })
         }
-
+        
     }
     
-    static func save(userID: String, title: String, date: String, url: String, completion: @escaping (News?) -> Void) {
+    static func save(userID: String, title: String, date: String, url: String, imageURL: String, completion: @escaping (News?) -> Void) {
         let newsAttr = ["title": title,
                         "date" : date,
-                        "url": url] as [String: Any]
+                        "url": url,
+                        "imageURL": imageURL] as [String: Any]
         
         let ref = Database.database().reference().child("news").child(userID).childByAutoId()
         ref.setValue(newsAttr) { (error, ref1) in
@@ -54,7 +56,8 @@ struct NewsService {
                 let newsAttr2 = ["title" : title,
                                   "date": date,
                                   "url" : url,
-                                  "id" : ref1.key] as [String : Any]
+                                  "id" : ref1.key,
+                                  "imageURL": imageURL] as [String : Any]
                 //let ref2 = Database.database().reference().child("news").child(userID).child(ref.key)
                 ref1.setValue(newsAttr2)
                 ref1.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -62,7 +65,6 @@ struct NewsService {
                     completion(news)
                 })
             }
-            
         }
     }
     
@@ -76,4 +78,9 @@ struct NewsService {
             }
         }
     }
+    
+    static func delete() {
+        Database.database().reference().child("groups")
+    }
+    
 }

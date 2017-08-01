@@ -49,6 +49,7 @@
 		CA8DAE3E1F195EAE00EE210F /* SearchAllTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8DAE3D1F195EAE00EE210F /* SearchAllTableViewController.swift */; };
 		CA8DAE401F195F2200EE210F /* MembersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8DAE3F1F195F2200EE210F /* MembersTableViewCell.swift */; };
 		CA8DAE421F195F2D00EE210F /* SearchAllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8DAE411F195F2D00EE210F /* SearchAllTableViewCell.swift */; };
+		CA9298721F30EAA90059F479 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9298711F30EAA90059F479 /* InfoViewController.swift */; };
 		CAE9EF2E1F211F0D00F51AF5 /* SendNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE9EF2D1F211F0D00F51AF5 /* SendNewsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		CA8DAE3D1F195EAE00EE210F /* SearchAllTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAllTableViewController.swift; sourceTree = "<group>"; };
 		CA8DAE3F1F195F2200EE210F /* MembersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembersTableViewCell.swift; sourceTree = "<group>"; };
 		CA8DAE411F195F2D00EE210F /* SearchAllTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAllTableViewCell.swift; sourceTree = "<group>"; };
+		CA9298711F30EAA90059F479 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		CAE9EF2D1F211F0D00F51AF5 /* SendNewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendNewsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -235,6 +237,7 @@
 				CA8DAE3D1F195EAE00EE210F /* SearchAllTableViewController.swift */,
 				CA8DAE3F1F195F2200EE210F /* MembersTableViewCell.swift */,
 				CA8DAE411F195F2D00EE210F /* SearchAllTableViewCell.swift */,
+				CA9298711F30EAA90059F479 /* InfoViewController.swift */,
 			);
 			name = GroupNews;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				CA1ABE101F142BBC00615629 /* Group.swift in Sources */,
 				CA1ABDEB1F14293900615629 /* NewsService.swift in Sources */,
 				CA1ABE031F142A3200615629 /* ProfileViewController.swift in Sources */,
+				CA9298721F30EAA90059F479 /* InfoViewController.swift in Sources */,
 				CA1ABE141F142BDD00615629 /* AllNewsTableViewCell.swift in Sources */,
 				CA8DAE421F195F2D00EE210F /* SearchAllTableViewCell.swift in Sources */,
 				CA8DAE3A1F1951E300EE210F /* CreateTableViewCell.swift in Sources */,

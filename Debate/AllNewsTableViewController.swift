@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import MBProgressHUD
-
+import AFNetworking
 
 class AllNewsTableViewController: UITableViewController {
     
@@ -28,6 +28,12 @@ class AllNewsTableViewController: UITableViewController {
     @IBOutlet weak var HuffingtonPost1: UIButton!
     @IBOutlet weak var Guardian1: UIButton!
     @IBOutlet weak var WashingtonPost1: UIButton!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Georgia", size: 20)!]
+    }
     
     // ABC BUTTON
     @IBAction func ABC(_ sender: UIButton) {
@@ -523,7 +529,7 @@ class AllNewsTableViewController: UITableViewController {
             
             let dispatchGroup = DispatchGroup()
             dispatchGroup.enter()
-            Alamofire.request("https://content.guardianapis.com/search?order-by=newest&page-size=50&from-date=2017-07-18&api-key=426baee8-e5b2-45f3-b569-55c660e95afa")
+            Alamofire.request("https://content.guardianapis.com/search?order-by=newest&page-size=50&from-date=2017-07-18&api-key=426baee8-e5b2-45f3-b569-55c660e95afa&show-fields=thumbnail")
                 .responseJSON { response in
                     let GnewsData = JSON(json: response.result.value!)
                     var GData = GnewsData["response"]["results"].arrayValue
@@ -738,7 +744,7 @@ class AllNewsTableViewController: UITableViewController {
         
         dispatchGroup.enter()
         // Guardian
-        Alamofire.request("https://content.guardianapis.com/search?order-by=newest&page-size=50&from-date=2017-07-18&api-key=426baee8-e5b2-45f3-b569-55c660e95afa")
+        Alamofire.request("https://content.guardianapis.com/search?order-by=newest&page-size=50&from-date=2017-07-18&api-key=426baee8-e5b2-45f3-b569-55c660e95afa&show-fields=thumbnail")
             .responseJSON { response in
                 let GnewsData = JSON(json: response.result.value!)
                 GData = GnewsData["response"]["results"].arrayValue
@@ -869,6 +875,17 @@ class AllNewsTableViewController: UITableViewController {
         // 2
         let new = news[row]
         
+        DispatchQueue.main.async {
+            
+            if new.imageURL != "" {
+                let picURL = URL(string: (new.imageURL)!)!
+                cell.image1.setImageWith(picURL)
+            } else {
+                let picURL = URL(string : "https://static.pexels.com/photos/242236/pexels-photo-242236.jpeg")
+                cell.image1.setImageWith(picURL!)
+            }
+        }
+    
         cell.titleLabel.text = new.title
         cell.dateLabel.text = new.date2!.toString1(dateFormat: "dd-MMM-yyyy HH:mm:ss")
 //        cell.urlLabel.text = new.url

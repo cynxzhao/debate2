@@ -44,6 +44,12 @@ class DetailedArchivesViewController: UIViewController {
         activity.stopAnimating()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Georgia", size: 17)!], for: .normal)
+
+    }
 
     /*
     // MARK: - Navigation

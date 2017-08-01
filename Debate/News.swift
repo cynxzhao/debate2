@@ -15,6 +15,7 @@ class News: Comparable {
     var title: String
     var date: String
     var url: String
+    var imageURL: String?
     var tags: [String]?
     var date2: Date?
     var id: String?
@@ -33,7 +34,8 @@ class News: Comparable {
         let date = dict["date"] as? String,
         let url = dict["url"] as? String,
         let tags = dict["tags"] as? [String],
-        let sender = dict["sender"] as? String
+        let sender = dict["sender"] as? String,
+        let imageURL = dict["imageURL"] as? String
             else {return nil}
         
         self.title = title
@@ -41,6 +43,7 @@ class News: Comparable {
         self.url = url
         self.tags = tags
         self.sender = sender
+        self.imageURL = imageURL
     }
     
     init?(snapshot1: DataSnapshot) {
@@ -48,32 +51,31 @@ class News: Comparable {
             let title = dict["title"] as? String,
             let date = dict["date"] as? String,
             let url = dict["url"] as? String,
-            let id = dict["id"] as? String
+            let id = dict["id"] as? String,
+            let imageURL = dict["imageURL"] as? String
             else {return nil}
         
         self.title = title
         self.date = date
         self.url = url
-       self.id = id
+        self.id = id
+        self.imageURL = imageURL
     }
 
     init(guardianjson: JSON) {
         self.title = guardianjson["webTitle"].stringValue
         self.date = guardianjson["webPublicationDate"].stringValue
         self.url = guardianjson["webUrl"].stringValue
+        self.imageURL = guardianjson["fields"]["thumbnail"].stringValue
         }
     
     init(otherjson: JSON) {
         self.title = otherjson["title"].stringValue
         self.date = otherjson["publishedAt"].stringValue
         self.url = otherjson["url"].stringValue
+        self.imageURL = otherjson["urlToImage"].stringValue
     }
-    
-    init(nytjson: JSON) {
-        self.title = nytjson["headline"]["main"].stringValue
-        self.date = nytjson["pub_date"].stringValue
-        self.url = nytjson["web_url"].stringValue
-    }
+
     
     static func ==(lhs: News, rhs: News) -> Bool {
         return lhs.date2! == rhs.date2!

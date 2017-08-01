@@ -25,6 +25,7 @@ class SearchAllTableViewController: UITableViewController {
         searchController.searchResultsUpdater = self as! UISearchResultsUpdating
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
+        searchController.searchBar.placeholder = "Search by username"
         tableView.tableHeaderView = searchController.searchBar
 
         // Uncomment the following line to preserve selection between presentations

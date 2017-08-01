@@ -88,7 +88,7 @@ class SendNewsViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil) */
             
-            NewsService.create(group: group!, title: news!.title, date: news!.date, url: news!.url, tags: [" "], sender: User.current, completion: { (news) in
+            NewsService.create(group: group!, title: news!.title, date: news!.date, url: news!.url, tags: [" "], sender: User.current, imageURL: news!.imageURL!, completion: { (news) in
                 guard let news = news else { return }
             })
             self.performSegue(withIdentifier: "toAll", sender: nil)
@@ -100,7 +100,7 @@ class SendNewsViewController: UIViewController {
             let tags: String = " " + tagsTextField.text!
             tagsArr = tags.components(separatedBy: " #")
             tagsArr.remove(at: 0)
-            NewsService.create(group: group!, title: news!.title, date: news!.date, url: news!.url, tags: tagsArr, sender: User.current, completion: { (news) in
+            NewsService.create(group: group!, title: news!.title, date: news!.date, url: news!.url, tags: tagsArr, sender: User.current, imageURL: news!.imageURL!, completion: { (news) in
                 guard let news = news else { return }
             })
             

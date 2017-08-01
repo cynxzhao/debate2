@@ -15,6 +15,7 @@ class SentNewsTableViewCell: UITableViewCell {
     @IBOutlet weak var tagsLabel: UILabel!
     @IBOutlet weak var senderLabel: UILabel!
     
+    @IBOutlet weak var image1: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

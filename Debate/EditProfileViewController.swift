@@ -16,8 +16,21 @@ class EditProfileViewController : UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var aboutMeTextField: UITextField!
+    
+    @IBOutlet weak var barButton: UIBarButtonItem!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Georgia", size: 17)!], for: .normal)
+
+        barButton.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Georgia", size: 17)!], for: UIControlState.normal)
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Georgia", size: 20)!]
+    }
 
     @IBAction func editSaved(_ sender: UIBarButtonItem) {
+        let dispatch = DispatchGroup()
         let ref = Database.database().reference().child("users").child((Auth.auth().currentUser?.uid)!)
         
         if nameTextField.text != "" {
@@ -26,30 +39,7 @@ class EditProfileViewController : UIViewController {
             ref.updateChildValues(userAttr)
             User.current.name = nameTextField.text!
         }
-//        
-//        let ref = Database.database().reference().child("users").child(User.current.uid)
-//        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-//            if let user = User(snapshot: snapshot) {
-//                groupIDs = user.groups!
-//                let ref1 = Database.database().reference().child("groups")
-//                ref1.observe(.value, with: { (snapshot) in
-//                    guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
-//                        else { return }
-//                    //print(snapshot[0])
-//                    for snap in snapshot {
-//                        for id in groupIDs {
-//                            if id == snap.key {
-//                                let group = Group(snapshot: snap)
-//                                self.groups.append(group!)
-//                            }
-//                        }
-//                    }
-//                    self.tableView.reloadData()
-//                    groupIDs = []
-//                })
-//            }
-//        })
-        
+        dispatch.enter()
         if usernameTextField.text != "" {
             var usernameTaken = false
             let ref1 = Database.database().reference()
@@ -67,7 +57,9 @@ class EditProfileViewController : UIViewController {
                     
                     UserService.updateUsername(new: self.usernameTextField.text!, completion: { (all) in
                         User.current.username = self.usernameTextField.text!
+                        dispatch.leave()
                     })
+                    
                     
                 }
             })
@@ -79,7 +71,11 @@ class EditProfileViewController : UIViewController {
             ref.updateChildValues(userAttr)
             User.current.aboutMe = aboutMeTextField.text!
         }
-        self.navigationController?.popViewController(animated: true)
+        
+        dispatch.notify(queue: .main) { 
+            self.navigationController?.popViewController(animated: true)
+        }
+        
         
     }
     

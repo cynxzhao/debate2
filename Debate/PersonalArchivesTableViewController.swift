@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import AFNetworking
 
 class PersonalArchivesTableViewController: UITableViewController {
     
@@ -18,12 +19,20 @@ class PersonalArchivesTableViewController: UITableViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //changes color of navigation controller
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Georgia", size: 20)!]
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         searchController.searchResultsUpdater = self as! UISearchResultsUpdating
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
+        searchController.searchBar.placeholder = "Search by title"
         tableView.tableHeaderView = searchController.searchBar
         
         
@@ -98,7 +107,13 @@ class PersonalArchivesTableViewController: UITableViewController {
         
         cell.titleLabel.text = new.title
         cell.dateLabel.text = new.date2!.toString2(dateFormat: "dd-MMM-yyyy HH:mm:ss")
-//        cell.urlLabel.text = new.url
+        if new.imageURL != "" {
+            let picURL = URL(string: (new.imageURL)!)!
+            cell.image1.setImageWith(picURL)
+        } else {
+            let picURL = URL(string : "https://static.pexels.com/photos/242236/pexels-photo-242236.jpeg")
+            cell.image1.setImageWith(picURL!)
+        }
         
         return cell
     }

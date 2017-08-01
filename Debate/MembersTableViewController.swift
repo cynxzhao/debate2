@@ -16,6 +16,7 @@ class MembersTableViewController: UITableViewController {
     var user : User?
     var userSet = Set<String>()
     
+    @IBOutlet weak var barButton: UIBarButtonItem!
     @IBAction func leaveGroup(_ sender: UIButton) {
         var id = group!.id
         
@@ -26,6 +27,14 @@ class MembersTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         var key: String = ""
         
+        //changes color of bar button and navigation controller
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Georgia", size: 17)!], for: .normal)
+
+        barButton.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Georgia", size: 17)!], for: UIControlState.normal)
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Georgia", size: 20)!]
+
+
         // retrieves users in group clicked
         let ref = Database.database().reference().child("groups")
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -38,9 +47,7 @@ class MembersTableViewController: UITableViewController {
                     key = snap.key
                     
                     self.users = (value?["users"] as? [String])!
-                    
                     self.userSet = Set(self.users)
-                    
                     // adds new user to list
                     if let user = self.user {
                         self.userSet.insert(user.username)
@@ -55,6 +62,21 @@ class MembersTableViewController: UITableViewController {
             }
         })
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "toInfo" {
+                // 1
+                let indexPath = tableView.indexPathForSelectedRow!
+                // 2
+                let user = users[indexPath.row]
+                // 3
+                let infoViewController = segue.destination as! InfoViewController
+                // 4
+                infoViewController.userName = user
+            }
+        }
     }
     
     override func viewDidLoad() {

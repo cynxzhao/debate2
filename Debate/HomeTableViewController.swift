@@ -13,10 +13,15 @@ class HomeTableViewController: UITableViewController {
         
     var groups = [Group]()
     
+    @IBOutlet weak var barButton: UIBarButtonItem!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         actOnViewController()
+        
+        barButton.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Georgia", size: 17)!], for: UIControlState.normal)
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Georgia", size: 20)!]
     }
     
     func actOnViewController() {

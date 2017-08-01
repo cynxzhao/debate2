@@ -13,7 +13,7 @@ import FirebaseDatabase.FIRDataSnapshot
 class Group {
     let groupName: String
     var users: [String]
-    let news = [News]()
+    var news = [News]()
     var id: String
     
     init(groupName: String, users: [String], id: String) {

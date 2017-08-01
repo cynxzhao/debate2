@@ -32,30 +32,40 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dE-h4-7B3">
-                                            <rect key="frame" x="8" y="5" width="359" height="21"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                            <rect key="frame" x="8" y="5" width="172" height="21"/>
+                                            <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="18"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5qt-BX-AUb">
+                                            <rect key="frame" x="187" y="11" width="180" height="120"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="120" id="IcB-YO-kl9"/>
+                                                <constraint firstAttribute="width" constant="180" id="h33-lt-Nj2"/>
+                                            </constraints>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z31-tF-PWt">
-                                            <rect key="frame" x="8" y="116.5" width="359" height="19"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                            <rect key="frame" x="8" y="116.5" width="164" height="19"/>
+                                            <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="16"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.45323901519999998" green="0.60774975769999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.32153671882622609" green="0.4575685105607149" blue="0.7477204907161803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="6dE-h4-7B3" secondAttribute="trailing" constant="8" id="08d-VF-aFj"/>
-                                        <constraint firstItem="Z31-tF-PWt" firstAttribute="bottom" secondItem="Agq-DT-JNw" secondAttribute="bottomMargin" constant="4" id="EF9-Mt-akl"/>
+                                        <constraint firstAttribute="trailing" secondItem="6dE-h4-7B3" secondAttribute="trailing" constant="195" id="08d-VF-aFj"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="5qt-BX-AUb" secondAttribute="trailing" id="Bt6-wX-ljK"/>
                                         <constraint firstItem="6dE-h4-7B3" firstAttribute="top" secondItem="Agq-DT-JNw" secondAttribute="top" constant="5" id="IsM-I4-aQW"/>
-                                        <constraint firstItem="Z31-tF-PWt" firstAttribute="leading" secondItem="Agq-DT-JNw" secondAttribute="leading" constant="8" id="NJG-ln-Om2"/>
+                                        <constraint firstItem="Z31-tF-PWt" firstAttribute="leading" secondItem="Agq-DT-JNw" secondAttribute="leadingMargin" id="S2J-ya-60l"/>
                                         <constraint firstItem="6dE-h4-7B3" firstAttribute="leading" secondItem="Agq-DT-JNw" secondAttribute="leading" constant="8" id="VKi-l3-2fW"/>
-                                        <constraint firstAttribute="trailing" secondItem="Z31-tF-PWt" secondAttribute="trailing" constant="8" id="vAo-w8-auN"/>
+                                        <constraint firstItem="5qt-BX-AUb" firstAttribute="top" secondItem="Agq-DT-JNw" secondAttribute="topMargin" constant="3" id="XpA-Yf-dw6"/>
+                                        <constraint firstItem="Z31-tF-PWt" firstAttribute="bottom" secondItem="Agq-DT-JNw" secondAttribute="bottomMargin" constant="4" id="Yed-tK-s1b"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Z31-tF-PWt" secondAttribute="trailing" constant="195" id="spD-7m-QpH"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dateLabel" destination="Z31-tF-PWt" id="Gff-Dv-153"/>
+                                    <outlet property="image1" destination="5qt-BX-AUb" id="1GU-H8-DW2"/>
                                     <outlet property="titleLabel" destination="6dE-h4-7B3" id="qIb-LD-ArE"/>
                                     <segue destination="sHK-XG-MH0" kind="show" identifier="toDetail" id="C4N-On-gsh"/>
                                 </connections>

@@ -16,6 +16,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var aboutMeLabel: UILabel!
     
+    @IBOutlet weak var barButton: UIBarButtonItem!
+    @IBOutlet weak var barButton2: UIBarButtonItem!
     
     @IBAction func logOutTapped(_ sender: UIBarButtonItem) {
         
@@ -36,6 +38,13 @@ class ProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        //changes color of bar button and navigation controller
+        barButton.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Georgia", size: 17)!], for: UIControlState.normal)
+        
+        barButton2.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Georgia", size: 17)!], for: UIControlState.normal)
+
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Georgia", size: 20)!]
         
         UserService.show(forUID: User.current.uid) { (user) in
 
