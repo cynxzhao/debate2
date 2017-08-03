@@ -34,18 +34,6 @@ class AllNewsTableViewController: UITableViewController {
         
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Georgia", size: 20)!]
         
-        ABC1.titleLabel?.adjustsFontSizeToFitWidth = true
-        AlJazeera1.titleLabel?.adjustsFontSizeToFitWidth = true
-        AP1.titleLabel?.adjustsFontSizeToFitWidth = true
-        BBC1.titleLabel?.adjustsFontSizeToFitWidth = true
-        BusinessInsider1.titleLabel?.adjustsFontSizeToFitWidth = true
-        CNBC1.titleLabel?.adjustsFontSizeToFitWidth = true
-        CNN1.titleLabel?.adjustsFontSizeToFitWidth = true
-        Economist1.titleLabel?.adjustsFontSizeToFitWidth = true
-        HuffingtonPost1.titleLabel?.adjustsFontSizeToFitWidth = true
-        Guardian1.titleLabel?.adjustsFontSizeToFitWidth = true
-        WashingtonPost1.titleLabel?.adjustsFontSizeToFitWidth = true
-        
 
     }
     
@@ -646,6 +634,18 @@ class AllNewsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ABC1.titleLabel?.adjustsFontSizeToFitWidth = true
+        AlJazeera1.titleLabel?.adjustsFontSizeToFitWidth = true
+        AP1.titleLabel?.adjustsFontSizeToFitWidth = true
+        BBC1.titleLabel?.adjustsFontSizeToFitWidth = true
+        BusinessInsider1.titleLabel?.adjustsFontSizeToFitWidth = true
+        CNBC1.titleLabel?.adjustsFontSizeToFitWidth = true
+        CNN1.titleLabel?.adjustsFontSizeToFitWidth = true
+        Economist1.titleLabel?.adjustsFontSizeToFitWidth = true
+        HuffingtonPost1.titleLabel?.adjustsFontSizeToFitWidth = true
+        Guardian1.titleLabel?.adjustsFontSizeToFitWidth = true
+        WashingtonPost1.titleLabel?.adjustsFontSizeToFitWidth = true
         
         ABC1.backgroundColor = UIColor.white
         AlJazeera1.backgroundColor = UIColor.white
