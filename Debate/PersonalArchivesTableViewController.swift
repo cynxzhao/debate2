@@ -21,7 +21,7 @@ class PersonalArchivesTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        searchController.searchBar.barStyle = UIBarStyle.blackTranslucent
         //changes color of navigation controller
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Georgia", size: 20)!]
     }
@@ -114,6 +114,8 @@ class PersonalArchivesTableViewController: UITableViewController {
             let picURL = URL(string : "https://static.pexels.com/photos/242236/pexels-photo-242236.jpeg")
             cell.image1.setImageWith(picURL!)
         }
+        
+        
         
         return cell
     }

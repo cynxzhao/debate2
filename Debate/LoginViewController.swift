@@ -48,7 +48,12 @@ class LoginViewController: UIViewController {
                 let alert = UIAlertController(title: "Error", message: "Username already exists", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
-            }else{
+            }else if username.characters.count > 20 {
+                let alert = UIAlertController(title: "Error", message: "Username too long, max 20 characters", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+
+            } else {
                 usernameTaken = false
                 UserService.create(firUser, username: username, name: name, aboutMe: aboutMe) { (user) in
                     guard let user = user else {

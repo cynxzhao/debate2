@@ -38,7 +38,7 @@ class ProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.tabBarController?.tabBar.tintColor = UIColor.black
         //changes color of bar button and navigation controller
         barButton.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Georgia", size: 17)!], for: UIControlState.normal)
         

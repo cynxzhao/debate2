@@ -95,17 +95,30 @@ class SendNewsViewController: UIViewController {
 
 
         }
-        else {
 
-            let tags: String = " " + tagsTextField.text!
-            tagsArr = tags.components(separatedBy: " #")
-            tagsArr.remove(at: 0)
-            NewsService.create(group: group!, title: news!.title, date: news!.date, url: news!.url, tags: tagsArr, sender: User.current, imageURL: news!.imageURL!, completion: { (news) in
+        else {
+            var tagsArr1 = tagsTextField.text!.components(separatedBy: "#")
+            tagsArr1.remove(at: 0)
+            for tag in tagsArr1 {
+                var newTag = tag.removingWhitespaces()
+                tagsArr.append(newTag)
+            }
+            if tagsArr.count > 5 {
+                let alert = UIAlertController(title: "Error", message: "Maximum 5 tags", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            } else if tagsArr.count == 0 {
+                let alert = UIAlertController(title: "Error", message: "Please add tags in the correct format", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+            else { NewsService.create(group: group!, title: news!.title, date: news!.date, url: news!.url, tags: tagsArr, sender: User.current, imageURL: news!.imageURL!, completion: { (news) in
                 guard let news = news else { return }
             })
             
             self.performSegue(withIdentifier: "toAll", sender: nil)
 
+        }
         }
     }
     
@@ -158,5 +171,11 @@ extension SendNewsViewController: UITableViewDataSource {
 extension SendNewsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
+    }
+}
+
+extension String {
+    func removingWhitespaces() -> String {
+        return components(separatedBy: .whitespaces).joined()
     }
 }

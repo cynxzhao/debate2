@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,147 +24,225 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Filter by news source:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vvd-Cg-OFp">
-                                    <rect key="frame" x="8" y="8" width="167" height="21"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter by news source:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vvd-Cg-OFp">
+                                    <rect key="frame" x="8" y="9.5" width="164" height="19.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="19.5" id="cfO-Pb-74o"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FaS-ec-NvE">
-                                    <rect key="frame" x="239" y="73" width="40" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.47006338380000001" green="0.47501141940000002" blue="0.47501141940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FaS-ec-NvE">
+                                    <rect key="frame" x="240" y="73" width="36.5" height="30"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="FaS-ec-NvE" secondAttribute="height" multiplier="37:30" id="AT2-gc-reK"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
                                     <state key="normal" title="CNN">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
                                         <action selector="CNN:" destination="Nox-7z-Dzz" eventType="touchUpInside" id="flF-OC-PQH"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jie-1y-CFu">
-                                    <rect key="frame" x="217" y="109" width="121" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.47006338380000001" green="0.47501141940000002" blue="0.47501141940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jie-1y-CFu">
+                                    <rect key="frame" x="220" y="109" width="118" height="30"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="jie-1y-CFu" secondAttribute="height" multiplier="59:15" id="s9Y-De-Ai3"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
                                     <state key="normal" title="Washington Post">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
                                         <action selector="WashingtonPost:" destination="Nox-7z-Dzz" eventType="touchUpInside" id="gsH-ch-ISh"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nx9-Xf-RVT">
-                                    <rect key="frame" x="285" y="73" width="79" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.47006338380000001" green="0.47501141940000002" blue="0.47501141940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
-                                    <state key="normal" title="Economist">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="Economist:" destination="Nox-7z-Dzz" eventType="touchUpInside" id="xAR-GK-nZ2"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sa-V5-Hjp">
-                                    <rect key="frame" x="201" y="37" width="129" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.47006338380000001" green="0.47501141940000002" blue="0.47501141940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sa-V5-Hjp">
+                                    <rect key="frame" x="209" y="37" width="123" height="30"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="7Sa-V5-Hjp" secondAttribute="height" multiplier="41:10" id="oMZ-sm-Izh"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
                                     <state key="normal" title="Associated Press">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
                                         <action selector="AssociatedPress:" destination="Nox-7z-Dzz" eventType="touchUpInside" id="iEm-Ij-b1g"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lb6-LL-pbJ">
-                                    <rect key="frame" x="19" y="109" width="114" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.47006338380000001" green="0.47501141940000002" blue="0.47501141940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lb6-LL-pbJ">
+                                    <rect key="frame" x="20" y="109" width="114" height="30"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="lb6-LL-pbJ" secondAttribute="height" multiplier="19:5" id="B8E-2t-4xx"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
                                     <state key="normal" title="Huffington Post">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
                                         <action selector="HuffingtonPost:" destination="Nox-7z-Dzz" eventType="touchUpInside" id="tth-fK-1Ip"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCC-fa-eVH">
-                                    <rect key="frame" x="11" y="73" width="37" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.47006338380000001" green="0.47501141940000002" blue="0.47501141940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCC-fa-eVH">
+                                    <rect key="frame" x="15" y="73" width="37" height="30"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="lCC-fa-eVH" secondAttribute="height" multiplier="37:30" id="GOb-Rd-Rk9"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
                                     <state key="normal" title="BBC">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
                                         <action selector="BBC:" destination="Nox-7z-Dzz" eventType="touchUpInside" id="h1M-o5-s3x"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1a3-lL-pRz">
-                                    <rect key="frame" x="182" y="73" width="49" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.47006338380000001" green="0.47501141940000002" blue="0.47501141940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1a3-lL-pRz">
+                                    <rect key="frame" x="187.5" y="73" width="44.5" height="30"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="1a3-lL-pRz" secondAttribute="height" multiplier="3:2" id="ncm-2l-s5O"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
                                     <state key="normal" title="CNBC">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
                                         <action selector="CNBC:" destination="Nox-7z-Dzz" eventType="touchUpInside" id="ZgY-YB-doU"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0VE-3V-sCF">
-                                    <rect key="frame" x="24" y="37" width="84" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.47006338380000001" green="0.47501141940000002" blue="0.47501141940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0VE-3V-sCF">
+                                    <rect key="frame" x="30" y="37" width="84" height="30"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="0VE-3V-sCF" secondAttribute="height" multiplier="14:5" id="bsx-wF-RjZ"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
                                     <state key="normal" title="ABC News">
-                                        <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <color key="titleColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
                                         <action selector="ABC:" destination="Nox-7z-Dzz" eventType="touchUpInside" id="WPb-Ac-HY0"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAx-PX-oWo">
-                                    <rect key="frame" x="118" y="37" width="79" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.47006338380000001" green="0.47501141940000002" blue="0.47501141940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAx-PX-oWo">
+                                    <rect key="frame" x="122" y="37" width="79" height="30"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="LAx-PX-oWo" secondAttribute="height" multiplier="79:30" id="KTo-xx-GGq"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
                                     <state key="normal" title="Al Jazeera">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
                                         <action selector="AlJazeera:" destination="Nox-7z-Dzz" eventType="touchUpInside" id="dy1-we-86i"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PcO-ae-vyJ">
-                                    <rect key="frame" x="141" y="109" width="68" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.47006338380000001" green="0.47501141940000002" blue="0.47501141940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PcO-ae-vyJ">
+                                    <rect key="frame" x="142" y="109" width="70" height="30"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="PcO-ae-vyJ" secondAttribute="height" multiplier="7:3" id="HQJ-0y-XNF"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
                                     <state key="normal" title="Guardian">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
                                         <action selector="Guardian:" destination="Nox-7z-Dzz" eventType="touchUpInside" id="osS-Rh-mtp"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8g-Mb-xQn">
-                                    <rect key="frame" x="56" y="73" width="118" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.47006338380000001" green="0.47501141940000002" blue="0.47501141940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8g-Mb-xQn">
+                                    <rect key="frame" x="60" y="73" width="119.5" height="30"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="d8g-Mb-xQn" secondAttribute="height" multiplier="4:1" id="IuS-TO-eze"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
                                     <state key="normal" title="Business Insider">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
                                         <action selector="BusinessInsider:" destination="Nox-7z-Dzz" eventType="touchUpInside" id="HYW-L0-3Io"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nx9-Xf-RVT">
+                                    <rect key="frame" x="284.5" y="73" width="74.5" height="30"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="nx9-Xf-RVT" secondAttribute="height" multiplier="5:2" id="mo2-Bf-0i8"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
+                                    <state key="normal" title="Economist">
+                                        <color key="titleColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="Economist:" destination="Nox-7z-Dzz" eventType="touchUpInside" id="xAR-GK-nZ2"/>
+                                    </connections>
+                                </button>
                             </subviews>
-                            <color key="backgroundColor" red="0.90594024750000002" green="0.92419061859999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.1169593069" green="0.11529790819999999" blue="0.12095100640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="0VE-3V-sCF" firstAttribute="leading" secondItem="9XH-Ig-WBE" secondAttribute="leading" constant="30" id="0rG-8k-jRj"/>
+                                <constraint firstItem="LAx-PX-oWo" firstAttribute="centerY" secondItem="0VE-3V-sCF" secondAttribute="centerY" id="0yx-DI-fh9"/>
+                                <constraint firstItem="jie-1y-CFu" firstAttribute="top" secondItem="nx9-Xf-RVT" secondAttribute="bottom" constant="6" id="4RN-Iu-Eo9"/>
+                                <constraint firstItem="lCC-fa-eVH" firstAttribute="leading" secondItem="9XH-Ig-WBE" secondAttribute="leading" constant="15" id="53g-Ri-d6B"/>
+                                <constraint firstItem="FaS-ec-NvE" firstAttribute="leading" secondItem="1a3-lL-pRz" secondAttribute="trailing" constant="8" id="6fb-XK-jzf"/>
+                                <constraint firstAttribute="trailing" secondItem="nx9-Xf-RVT" secondAttribute="trailing" constant="16" id="6kb-b4-Cre"/>
+                                <constraint firstItem="1a3-lL-pRz" firstAttribute="top" secondItem="7Sa-V5-Hjp" secondAttribute="bottom" constant="6" id="B8M-sW-93p"/>
+                                <constraint firstItem="nx9-Xf-RVT" firstAttribute="centerY" secondItem="lCC-fa-eVH" secondAttribute="centerY" id="BN8-kS-eE3"/>
+                                <constraint firstItem="1a3-lL-pRz" firstAttribute="leading" secondItem="d8g-Mb-xQn" secondAttribute="trailing" constant="8" id="EeS-Yb-dii"/>
+                                <constraint firstItem="1a3-lL-pRz" firstAttribute="top" secondItem="LAx-PX-oWo" secondAttribute="bottom" constant="6" id="Faj-Lc-hcE"/>
+                                <constraint firstItem="jie-1y-CFu" firstAttribute="leading" secondItem="PcO-ae-vyJ" secondAttribute="trailing" constant="8" id="J3l-oS-Ua4"/>
+                                <constraint firstItem="7Sa-V5-Hjp" firstAttribute="leading" secondItem="LAx-PX-oWo" secondAttribute="trailing" constant="8" id="JKP-8h-Uxm"/>
+                                <constraint firstItem="7Sa-V5-Hjp" firstAttribute="height" secondItem="0VE-3V-sCF" secondAttribute="height" id="KJR-fN-LgJ"/>
+                                <constraint firstItem="lCC-fa-eVH" firstAttribute="height" secondItem="0VE-3V-sCF" secondAttribute="height" id="LIf-IN-6Bj"/>
+                                <constraint firstItem="FaS-ec-NvE" firstAttribute="centerY" secondItem="lCC-fa-eVH" secondAttribute="centerY" id="MqE-vf-0wn"/>
+                                <constraint firstItem="nx9-Xf-RVT" firstAttribute="height" secondItem="0VE-3V-sCF" secondAttribute="height" id="NSt-ES-EKK"/>
+                                <constraint firstItem="jie-1y-CFu" firstAttribute="top" secondItem="1a3-lL-pRz" secondAttribute="bottom" constant="6" id="Nic-0d-13g"/>
+                                <constraint firstItem="lCC-fa-eVH" firstAttribute="top" secondItem="0VE-3V-sCF" secondAttribute="bottom" constant="6" id="PUP-Hz-rQB"/>
+                                <constraint firstItem="PcO-ae-vyJ" firstAttribute="top" secondItem="d8g-Mb-xQn" secondAttribute="bottom" constant="6" id="QHW-Rw-2z7"/>
+                                <constraint firstItem="FaS-ec-NvE" firstAttribute="height" secondItem="0VE-3V-sCF" secondAttribute="height" id="RVc-g7-YAz"/>
+                                <constraint firstAttribute="trailing" secondItem="7Sa-V5-Hjp" secondAttribute="trailing" constant="43" id="T9f-S5-df1"/>
+                                <constraint firstItem="nx9-Xf-RVT" firstAttribute="top" secondItem="7Sa-V5-Hjp" secondAttribute="bottom" constant="6" id="Usr-K9-6tK"/>
+                                <constraint firstItem="1a3-lL-pRz" firstAttribute="centerY" secondItem="lCC-fa-eVH" secondAttribute="centerY" id="VL2-uP-mJq"/>
+                                <constraint firstItem="nx9-Xf-RVT" firstAttribute="leading" secondItem="FaS-ec-NvE" secondAttribute="trailing" constant="8" id="X2H-y6-AEV"/>
+                                <constraint firstItem="d8g-Mb-xQn" firstAttribute="leading" secondItem="lCC-fa-eVH" secondAttribute="trailing" constant="8" id="XXt-zy-Rtx"/>
+                                <constraint firstAttribute="bottom" secondItem="jie-1y-CFu" secondAttribute="bottom" constant="11" id="a5j-TR-tVH"/>
+                                <constraint firstItem="LAx-PX-oWo" firstAttribute="leading" secondItem="0VE-3V-sCF" secondAttribute="trailing" constant="8" id="bJN-2M-2h1"/>
+                                <constraint firstItem="7Sa-V5-Hjp" firstAttribute="centerY" secondItem="0VE-3V-sCF" secondAttribute="centerY" id="bTg-l1-qEA"/>
+                                <constraint firstItem="1a3-lL-pRz" firstAttribute="height" secondItem="0VE-3V-sCF" secondAttribute="height" id="bXg-8k-cy3"/>
+                                <constraint firstItem="Vvd-Cg-OFp" firstAttribute="top" secondItem="9XH-Ig-WBE" secondAttribute="top" constant="9.5" id="cX2-YF-XBf"/>
+                                <constraint firstItem="PcO-ae-vyJ" firstAttribute="centerY" secondItem="lb6-LL-pbJ" secondAttribute="centerY" id="cii-YM-cHC"/>
+                                <constraint firstItem="lb6-LL-pbJ" firstAttribute="height" secondItem="0VE-3V-sCF" secondAttribute="height" id="ckg-rd-azQ"/>
+                                <constraint firstAttribute="bottom" secondItem="PcO-ae-vyJ" secondAttribute="bottom" constant="11" id="dVY-ae-ddm"/>
+                                <constraint firstItem="lb6-LL-pbJ" firstAttribute="top" secondItem="d8g-Mb-xQn" secondAttribute="bottom" constant="6" id="eKy-zQ-cDU"/>
+                                <constraint firstItem="jie-1y-CFu" firstAttribute="centerY" secondItem="lb6-LL-pbJ" secondAttribute="centerY" id="gKN-p2-tZ1"/>
+                                <constraint firstItem="d8g-Mb-xQn" firstAttribute="centerY" secondItem="lCC-fa-eVH" secondAttribute="centerY" id="gsR-6s-g2L"/>
+                                <constraint firstItem="PcO-ae-vyJ" firstAttribute="leading" secondItem="lb6-LL-pbJ" secondAttribute="trailing" constant="8" id="gvz-eR-9CD"/>
+                                <constraint firstAttribute="trailing" secondItem="jie-1y-CFu" secondAttribute="trailing" constant="37" id="iq8-N5-SfE"/>
+                                <constraint firstItem="LAx-PX-oWo" firstAttribute="top" secondItem="Vvd-Cg-OFp" secondAttribute="bottom" constant="8" id="jOT-2P-i3E"/>
+                                <constraint firstItem="Vvd-Cg-OFp" firstAttribute="leading" secondItem="9XH-Ig-WBE" secondAttribute="leading" constant="8" id="kGR-Hm-Mh9"/>
+                                <constraint firstItem="LAx-PX-oWo" firstAttribute="height" secondItem="0VE-3V-sCF" secondAttribute="height" id="qbP-pA-Qf1"/>
+                                <constraint firstItem="lb6-LL-pbJ" firstAttribute="top" secondItem="lCC-fa-eVH" secondAttribute="bottom" constant="6" id="rap-r3-VVD"/>
+                                <constraint firstItem="lb6-LL-pbJ" firstAttribute="leading" secondItem="9XH-Ig-WBE" secondAttribute="leading" constant="20" id="sQo-39-FZ0"/>
+                                <constraint firstItem="0VE-3V-sCF" firstAttribute="top" secondItem="Vvd-Cg-OFp" secondAttribute="bottom" constant="8" id="srn-zF-6mH"/>
+                                <constraint firstItem="jie-1y-CFu" firstAttribute="top" secondItem="FaS-ec-NvE" secondAttribute="bottom" constant="6" id="sxN-9E-KNS"/>
+                                <constraint firstItem="jie-1y-CFu" firstAttribute="height" secondItem="0VE-3V-sCF" secondAttribute="height" id="tUp-1X-q5a"/>
+                                <constraint firstItem="d8g-Mb-xQn" firstAttribute="height" secondItem="0VE-3V-sCF" secondAttribute="height" id="u6Q-7a-Ld0"/>
+                                <constraint firstItem="d8g-Mb-xQn" firstAttribute="top" secondItem="LAx-PX-oWo" secondAttribute="bottom" constant="6" id="wmG-pE-qD1"/>
+                                <constraint firstItem="PcO-ae-vyJ" firstAttribute="height" secondItem="0VE-3V-sCF" secondAttribute="height" id="wrg-zX-KE6"/>
+                                <constraint firstItem="PcO-ae-vyJ" firstAttribute="top" secondItem="1a3-lL-pRz" secondAttribute="bottom" constant="6" id="yAP-6A-q3g"/>
+                                <constraint firstAttribute="bottom" secondItem="lb6-LL-pbJ" secondAttribute="bottom" constant="11" id="yKZ-hp-hRy"/>
+                                <constraint firstItem="FaS-ec-NvE" firstAttribute="top" secondItem="7Sa-V5-Hjp" secondAttribute="bottom" constant="6" id="zLv-HR-TT4"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="allNewsTableViewCell" rowHeight="140" id="uNn-ft-fIS" customClass="AllNewsTableViewCell" customModule="Debate" customModuleProvider="target">
@@ -173,14 +252,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="139.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7Y-oa-Vvn">
-                                            <rect key="frame" x="8" y="5" width="172" height="21"/>
-                                            <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="18"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7Y-oa-Vvn">
+                                            <rect key="frame" x="8" y="5" width="169" height="19.5"/>
+                                            <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qX5-Nx-Uu9">
-                                            <rect key="frame" x="8" y="108.5" width="164" height="19"/>
+                                            <rect key="frame" x="8" y="108.5" width="169" height="19"/>
                                             <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -193,14 +272,13 @@
                                             </constraints>
                                         </imageView>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.90594024750000002" green="0.92419061859999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="VjF-lc-8Pd" firstAttribute="trailing" secondItem="LfZ-KN-EOL" secondAttribute="trailingMargin" id="Cx1-OQ-Olu"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="qX5-Nx-Uu9" secondAttribute="trailing" constant="195" id="Dps-SS-ORT"/>
-                                        <constraint firstAttribute="trailing" secondItem="O7Y-oa-Vvn" secondAttribute="trailing" constant="195" id="TPS-fV-DPr"/>
                                         <constraint firstItem="O7Y-oa-Vvn" firstAttribute="top" secondItem="LfZ-KN-EOL" secondAttribute="top" constant="5" id="aLJ-D2-aGR"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="qX5-Nx-Uu9" secondAttribute="bottom" constant="4" id="eK1-LG-8vL"/>
                                         <constraint firstItem="qX5-Nx-Uu9" firstAttribute="leading" secondItem="LfZ-KN-EOL" secondAttribute="leadingMargin" id="jcC-aJ-EjI"/>
+                                        <constraint firstItem="VjF-lc-8Pd" firstAttribute="leading" secondItem="qX5-Nx-Uu9" secondAttribute="trailing" constant="10" id="jsF-wa-Ing"/>
+                                        <constraint firstItem="VjF-lc-8Pd" firstAttribute="leading" secondItem="O7Y-oa-Vvn" secondAttribute="trailing" constant="10" id="uSi-Gr-Yv1"/>
                                         <constraint firstItem="VjF-lc-8Pd" firstAttribute="top" secondItem="LfZ-KN-EOL" secondAttribute="topMargin" constant="3" id="x5z-ns-MeG"/>
                                         <constraint firstItem="O7Y-oa-Vvn" firstAttribute="leading" secondItem="LfZ-KN-EOL" secondAttribute="leading" constant="8" id="xky-Vh-SNH"/>
                                     </constraints>
@@ -259,15 +337,15 @@
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v92-qj-gob">
-                                <rect key="frame" x="5" y="28" width="37" height="32"/>
+                                <rect key="frame" x="15" y="28" width="52" height="32"/>
                                 <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="&lt; Back"/>
                                 <connections>
                                     <segue destination="2hf-Ci-BpM" kind="unwind" identifier="toBack" unwindAction="unwindToAllNewsTableViewController:" id="gVz-sh-Osj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMl-mY-QrQ">
-                                <rect key="frame" x="319" y="28" width="35" height="32"/>
+                                <rect key="frame" x="320" y="28" width="35" height="32"/>
                                 <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
@@ -276,7 +354,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qe7-Hu-cyq">
-                                <rect key="frame" x="122" y="28" width="117" height="32"/>
+                                <rect key="frame" x="129" y="28" width="117" height="32"/>
                                 <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
                                 <state key="normal" title="Send to Groups"/>
                                 <connections>
@@ -291,17 +369,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="stS-Ia-XVG" secondAttribute="bottom" id="1SL-lb-VPX"/>
-                            <constraint firstItem="v92-qj-gob" firstAttribute="leading" secondItem="p25-Ua-HST" secondAttribute="leading" constant="5" id="433-5h-Kdp"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="yMl-mY-QrQ" secondAttribute="trailing" constant="5" id="4Zj-CU-JdL"/>
+                            <constraint firstItem="v92-qj-gob" firstAttribute="leading" secondItem="p25-Ua-HST" secondAttribute="leading" constant="15" id="433-5h-Kdp"/>
                             <constraint firstItem="stS-Ia-XVG" firstAttribute="leading" secondItem="p25-Ua-HST" secondAttribute="leading" id="5aR-yL-m5W"/>
                             <constraint firstItem="qe7-Hu-cyq" firstAttribute="top" secondItem="6VN-AB-tP2" secondAttribute="bottom" constant="8" id="8dI-qh-vAS"/>
-                            <constraint firstItem="yMl-mY-QrQ" firstAttribute="leading" secondItem="qe7-Hu-cyq" secondAttribute="trailing" constant="80" id="99s-3u-cvt"/>
+                            <constraint firstAttribute="trailing" secondItem="yMl-mY-QrQ" secondAttribute="trailing" constant="20" id="CJd-a6-ZUU"/>
                             <constraint firstItem="dpL-I7-e5u" firstAttribute="top" secondItem="hiQ-wa-2Y0" secondAttribute="bottom" constant="333" id="Gyo-9P-fga"/>
+                            <constraint firstItem="qe7-Hu-cyq" firstAttribute="centerX" secondItem="p25-Ua-HST" secondAttribute="centerX" id="JR0-Kc-3Wn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hiQ-wa-2Y0" secondAttribute="trailing" constant="153" id="L8j-Dg-5iF"/>
                             <constraint firstAttribute="trailing" secondItem="stS-Ia-XVG" secondAttribute="trailing" id="MWl-oH-aIL"/>
                             <constraint firstItem="stS-Ia-XVG" firstAttribute="top" secondItem="6VN-AB-tP2" secondAttribute="bottom" constant="40" id="aoS-gb-3HT"/>
                             <constraint firstItem="yMl-mY-QrQ" firstAttribute="top" secondItem="6VN-AB-tP2" secondAttribute="bottom" constant="8" id="oiW-jO-xGt"/>
-                            <constraint firstItem="qe7-Hu-cyq" firstAttribute="leading" secondItem="v92-qj-gob" secondAttribute="trailing" constant="80" id="tAs-IO-yFW"/>
                             <constraint firstItem="hiQ-wa-2Y0" firstAttribute="leading" secondItem="p25-Ua-HST" secondAttribute="leadingMargin" constant="153" id="v5r-j2-Eb8"/>
                             <constraint firstItem="v92-qj-gob" firstAttribute="top" secondItem="6VN-AB-tP2" secondAttribute="bottom" constant="8" id="zno-vh-789"/>
                         </constraints>
@@ -329,7 +406,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Tags: (please format like: #hi #hey)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhK-wG-pMG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Tags: (please format like: #hi#hey)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QhK-wG-pMG">
                                 <rect key="frame" x="36" y="361.5" width="303" height="20"/>
                                 <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -346,7 +423,7 @@
                                         <rect key="frame" x="0.0" y="28" width="303" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SZw-OP-kbw" id="vST-Pq-ReO">
-                                            <rect key="frame" x="0.0" y="0.0" width="303" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="303" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXW-TL-wsK">
@@ -364,7 +441,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Please format like: #hi #hello #hey" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="la5-ff-fbP">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="la5-ff-fbP">
                                 <rect key="frame" x="36" y="387" width="303" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -375,7 +452,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwk-Z1-L6C">
-                                <rect key="frame" x="316" y="28" width="38" height="32"/>
+                                <rect key="frame" x="317" y="28" width="38" height="32"/>
                                 <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
                                 <state key="normal" title="Send"/>
                                 <connections>
@@ -383,7 +460,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUt-Dr-d7Q">
-                                <rect key="frame" x="5" y="28" width="52" height="32"/>
+                                <rect key="frame" x="15" y="28" width="52" height="32"/>
                                 <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
                                 <state key="normal" title="&lt; Back"/>
                                 <connections>
@@ -399,22 +476,22 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="SUt-Dr-d7Q" firstAttribute="top" secondItem="gJp-Oc-lFP" secondAttribute="bottom" constant="8" id="6Pk-2J-anV"/>
                             <constraint firstItem="RVV-qL-JaC" firstAttribute="leading" secondItem="yRV-wz-g52" secondAttribute="leadingMargin" constant="20" id="7z4-u8-DLa"/>
                             <constraint firstItem="QhK-wG-pMG" firstAttribute="top" secondItem="M9x-cY-3KD" secondAttribute="bottom" constant="29" id="8Dd-fg-mr3"/>
+                            <constraint firstAttribute="trailing" secondItem="mwk-Z1-L6C" secondAttribute="trailing" constant="20" id="Bsm-sr-dC0"/>
                             <constraint firstItem="la5-ff-fbP" firstAttribute="top" secondItem="QhK-wG-pMG" secondAttribute="bottom" constant="5.5" id="GhL-l4-Jxz"/>
                             <constraint firstItem="la5-ff-fbP" firstAttribute="leading" secondItem="yRV-wz-g52" secondAttribute="leadingMargin" constant="20" id="IbU-ke-rfb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mwk-Z1-L6C" secondAttribute="trailing" constant="5" id="KOP-Aw-z93"/>
                             <constraint firstItem="QhK-wG-pMG" firstAttribute="leading" secondItem="yRV-wz-g52" secondAttribute="leadingMargin" constant="20" id="N2U-Cb-MVk"/>
-                            <constraint firstItem="SUt-Dr-d7Q" firstAttribute="top" secondItem="gJp-Oc-lFP" secondAttribute="bottom" constant="8" id="NZB-l7-aFi"/>
                             <constraint firstItem="RVV-qL-JaC" firstAttribute="top" secondItem="SUt-Dr-d7Q" secondAttribute="bottom" constant="40" id="Sr0-RI-jvK"/>
                             <constraint firstItem="M9x-cY-3KD" firstAttribute="top" secondItem="RVV-qL-JaC" secondAttribute="bottom" constant="5.5" id="TTL-fl-RKJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RVV-qL-JaC" secondAttribute="trailing" constant="20" id="aOs-BM-TDT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QhK-wG-pMG" secondAttribute="trailing" constant="20" id="bfY-hX-Ufb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="M9x-cY-3KD" secondAttribute="trailing" constant="20" id="bpX-te-Mxe"/>
-                            <constraint firstItem="mwk-Z1-L6C" firstAttribute="top" secondItem="gJp-Oc-lFP" secondAttribute="bottom" constant="8" id="gCb-7K-7xN"/>
                             <constraint firstItem="M9x-cY-3KD" firstAttribute="leading" secondItem="yRV-wz-g52" secondAttribute="leadingMargin" constant="20" id="ilW-kz-FrQ"/>
-                            <constraint firstItem="SUt-Dr-d7Q" firstAttribute="leading" secondItem="yRV-wz-g52" secondAttribute="leading" constant="5" id="l7q-NQ-mGD"/>
+                            <constraint firstItem="SUt-Dr-d7Q" firstAttribute="leading" secondItem="yRV-wz-g52" secondAttribute="leading" constant="15" id="l7q-NQ-mGD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="la5-ff-fbP" secondAttribute="trailing" constant="20" id="ldi-LJ-mQw"/>
+                            <constraint firstItem="mwk-Z1-L6C" firstAttribute="top" secondItem="gJp-Oc-lFP" secondAttribute="bottom" constant="8" id="zc1-ga-pb3"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
@@ -455,4 +532,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="UsQ-FM-bYJ"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

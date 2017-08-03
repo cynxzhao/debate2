@@ -12,6 +12,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class EditProfileViewController : UIViewController {
+    
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
@@ -21,13 +22,21 @@ class EditProfileViewController : UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.tintColor = UIColor.black
+
         
         UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Georgia", size: 17)!], for: .normal)
 
         barButton.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Georgia", size: 17)!], for: UIControlState.normal)
         
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Georgia", size: 20)!]
+        
+        nameTextField.text = User.current.name
+        usernameTextField.text = User.current.username
+        aboutMeTextField.text = User.current.aboutMe
+        
     }
+    
 
     @IBAction func editSaved(_ sender: UIBarButtonItem) {
         let dispatch = DispatchGroup()
@@ -39,8 +48,10 @@ class EditProfileViewController : UIViewController {
             ref.updateChildValues(userAttr)
             User.current.name = nameTextField.text!
         }
-        dispatch.enter()
-        if usernameTextField.text != "" {
+        
+        if usernameTextField.text != "" && usernameTextField.text != User.current.username {
+            
+            dispatch.enter()
             var usernameTaken = false
             let ref1 = Database.database().reference()
             ref1.child("users").queryOrdered(byChild: "username").queryEqual(toValue: usernameTextField.text).observeSingleEvent(of: .value, with: { snapshot in
@@ -50,7 +61,12 @@ class EditProfileViewController : UIViewController {
                     let alert = UIAlertController(title: "Error", message: "Username already exists, so it could not be updated", preferredStyle: UIAlertControllerStyle.alert)
                     alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
-                }else{
+                } else if (self.usernameTextField.text?.characters.count)! > 20 {
+                    let alert = UIAlertController(title: "Error", message: "Username too long, max 20 characters", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    
+                } else {
                     usernameTaken = false
                     let userAttr = ["username": self.usernameTextField.text]
                     ref.updateChildValues(userAttr)
@@ -72,10 +88,9 @@ class EditProfileViewController : UIViewController {
             User.current.aboutMe = aboutMeTextField.text!
         }
         
-        dispatch.notify(queue: .main) { 
+        dispatch.notify(queue: .main) {
             self.navigationController?.popViewController(animated: true)
         }
-        
         
     }
     

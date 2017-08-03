@@ -22,98 +22,90 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BpQ-Fe-0Js">
-                                <rect key="frame" x="16" y="114" width="343" height="95"/>
-                                <color key="backgroundColor" red="0.9059402474635303" green="0.92419061863846386" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="95" id="Swv-Yv-gAd"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPt-8r-khV">
-                                <rect key="frame" x="16" y="217" width="343" height="95"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USERNAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuy-Ld-G8K">
-                                        <rect key="frame" x="21" y="46.5" width="301" height="28.5"/>
-                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="25"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.45323901519999998" green="0.60774975769999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="fuy-Ld-G8K" secondAttribute="trailing" constant="21" id="TmK-w6-2DU"/>
-                                    <constraint firstAttribute="bottom" secondItem="fuy-Ld-G8K" secondAttribute="bottom" constant="20" id="Y6d-0b-FXS"/>
-                                    <constraint firstAttribute="height" constant="95" id="YzO-6X-GJC"/>
-                                    <constraint firstItem="fuy-Ld-G8K" firstAttribute="leading" secondItem="cPt-8r-khV" secondAttribute="leading" constant="21" id="pgH-14-rQQ"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfE-UH-zrd">
-                                <rect key="frame" x="16" y="320" width="343" height="231"/>
-                                <color key="backgroundColor" red="0.90594024750000002" green="0.92419061859999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="231" id="jzv-sG-Wnl"/>
-                                </constraints>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcB-bb-nb9">
-                                <rect key="frame" x="37" y="164.5" width="301" height="28.5"/>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="25"/>
-                                <color key="textColor" red="0.47006338380000001" green="0.47501141940000002" blue="0.47501141940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="37" y="183.5" width="301" height="23"/>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFR-dY-206">
-                                <rect key="frame" x="37" y="232" width="301" height="24"/>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="21"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="37" y="222.5" width="73" height="17.5"/>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
+                                <color key="textColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Me:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bje-zo-UK4">
-                                <rect key="frame" x="37" y="335" width="301" height="24"/>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABOUT ME" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2j-hO-GQC">
-                                <rect key="frame" x="37" y="364" width="301" height="28.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28.5" id="QdG-fF-mZ6"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
-                                <color key="textColor" red="0.47006338380000001" green="0.47501141940000002" blue="0.47501141940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="37" y="281" width="70" height="17.5"/>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
+                                <color key="textColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdC-Q8-LnS">
-                                <rect key="frame" x="37" y="129.5" width="301" height="24"/>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="21"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="37" y="164" width="44.5" height="17.5"/>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
+                                <color key="textColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USERNAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuy-Ld-G8K">
+                                <rect key="frame" x="37" y="242" width="301" height="23"/>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y2L-Yn-od3">
+                                <rect key="frame" x="15" y="211.5" width="345" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="yn4-IZ-SO9"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F14-eV-Mll">
+                                <rect key="frame" x="15" y="328.5" width="345" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="TZp-9y-YJU"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Bu-eo-coE">
+                                <rect key="frame" x="15" y="270" width="345" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="o5e-wg-MuJ"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="ABOUT ME" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2j-hO-GQC">
+                                <rect key="frame" x="37" y="300.5" width="301" height="23"/>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BpQ-Fe-0Js" firstAttribute="trailing" secondItem="m5d-M1-Z5d" secondAttribute="trailingMargin" id="3Xm-tN-15M"/>
-                            <constraint firstItem="TdC-Q8-LnS" firstAttribute="top" secondItem="IV4-of-u6o" secondAttribute="bottom" constant="65" id="6aN-B5-Wdf"/>
-                            <constraint firstItem="cPt-8r-khV" firstAttribute="top" secondItem="BpQ-Fe-0Js" secondAttribute="bottom" constant="8" id="Dq5-48-NW3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pFR-dY-206" secondAttribute="trailing" constant="21" id="G0x-Mg-HWu"/>
-                            <constraint firstItem="bje-zo-UK4" firstAttribute="leading" secondItem="m5d-M1-Z5d" secondAttribute="leadingMargin" constant="21" id="K9W-2A-R9R"/>
-                            <constraint firstItem="cPt-8r-khV" firstAttribute="trailing" secondItem="m5d-M1-Z5d" secondAttribute="trailingMargin" id="MEE-bO-lgk"/>
-                            <constraint firstItem="cPt-8r-khV" firstAttribute="top" secondItem="qcB-bb-nb9" secondAttribute="bottom" constant="24" id="MX7-ZO-ulU"/>
-                            <constraint firstItem="cfE-UH-zrd" firstAttribute="leading" secondItem="m5d-M1-Z5d" secondAttribute="leadingMargin" id="Md7-Rf-gOk"/>
-                            <constraint firstItem="cfE-UH-zrd" firstAttribute="trailing" secondItem="m5d-M1-Z5d" secondAttribute="trailingMargin" id="N0D-6H-Bul"/>
-                            <constraint firstItem="e2j-hO-GQC" firstAttribute="leading" secondItem="m5d-M1-Z5d" secondAttribute="leadingMargin" constant="21" id="Rwj-sL-w5Z"/>
-                            <constraint firstItem="pFR-dY-206" firstAttribute="top" secondItem="BpQ-Fe-0Js" secondAttribute="bottom" constant="23" id="TiS-Jk-foH"/>
-                            <constraint firstItem="TdC-Q8-LnS" firstAttribute="leading" secondItem="m5d-M1-Z5d" secondAttribute="leadingMargin" constant="21" id="YIt-Kw-4hq"/>
-                            <constraint firstItem="BpQ-Fe-0Js" firstAttribute="leading" secondItem="m5d-M1-Z5d" secondAttribute="leadingMargin" id="dBv-bq-ZdD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bje-zo-UK4" secondAttribute="trailing" constant="21" id="dFq-rP-2Eo"/>
-                            <constraint firstItem="e2j-hO-GQC" firstAttribute="top" secondItem="bje-zo-UK4" secondAttribute="bottom" constant="5" id="e1z-Y1-g9w"/>
-                            <constraint firstItem="cfE-UH-zrd" firstAttribute="top" secondItem="cPt-8r-khV" secondAttribute="bottom" constant="8" id="fQ3-Ff-SVy"/>
-                            <constraint firstItem="pFR-dY-206" firstAttribute="leading" secondItem="m5d-M1-Z5d" secondAttribute="leadingMargin" constant="21" id="hBI-tH-7gF"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="TdC-Q8-LnS" secondAttribute="trailing" constant="21" id="hQH-MV-P6q"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="e2j-hO-GQC" secondAttribute="trailing" constant="21" id="nSu-eo-GD3"/>
-                            <constraint firstItem="BpQ-Fe-0Js" firstAttribute="top" secondItem="IV4-of-u6o" secondAttribute="bottom" constant="50" id="nyg-bT-uxT"/>
-                            <constraint firstItem="bje-zo-UK4" firstAttribute="top" secondItem="cPt-8r-khV" secondAttribute="bottom" constant="23" id="oUr-2d-36v"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qcB-bb-nb9" secondAttribute="trailing" constant="21" id="qtE-dd-9Kf"/>
-                            <constraint firstItem="cPt-8r-khV" firstAttribute="leading" secondItem="m5d-M1-Z5d" secondAttribute="leadingMargin" id="xJg-Pk-4JV"/>
-                            <constraint firstItem="qcB-bb-nb9" firstAttribute="leading" secondItem="m5d-M1-Z5d" secondAttribute="leadingMargin" constant="21" id="z1N-5x-gc9"/>
+                            <constraint firstItem="Y2L-Yn-od3" firstAttribute="leading" secondItem="m5d-M1-Z5d" secondAttribute="leading" constant="15" id="5eV-Sd-hcT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="e2j-hO-GQC" secondAttribute="trailing" constant="21" id="7h5-Wd-Of5"/>
+                            <constraint firstAttribute="trailing" secondItem="7Bu-eo-coE" secondAttribute="trailing" constant="15" id="CcG-BF-ORI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qcB-bb-nb9" secondAttribute="trailing" constant="21" id="HMu-Sx-03m"/>
+                            <constraint firstItem="pFR-dY-206" firstAttribute="top" secondItem="Y2L-Yn-od3" secondAttribute="bottom" constant="10" id="JpO-OU-M2O"/>
+                            <constraint firstItem="bje-zo-UK4" firstAttribute="top" secondItem="7Bu-eo-coE" secondAttribute="bottom" constant="10" id="NZR-vp-gOL"/>
+                            <constraint firstItem="F14-eV-Mll" firstAttribute="top" secondItem="e2j-hO-GQC" secondAttribute="bottom" constant="5" id="OPu-Jm-REM"/>
+                            <constraint firstItem="fuy-Ld-G8K" firstAttribute="leading" secondItem="m5d-M1-Z5d" secondAttribute="leadingMargin" constant="21" id="Tru-xS-Vgc"/>
+                            <constraint firstItem="e2j-hO-GQC" firstAttribute="top" secondItem="bje-zo-UK4" secondAttribute="bottom" constant="2" id="WEw-A3-ET6"/>
+                            <constraint firstItem="7Bu-eo-coE" firstAttribute="top" secondItem="fuy-Ld-G8K" secondAttribute="bottom" constant="5" id="a2w-m2-mXz"/>
+                            <constraint firstItem="Y2L-Yn-od3" firstAttribute="top" secondItem="qcB-bb-nb9" secondAttribute="bottom" constant="5" id="aH1-TJ-WRD"/>
+                            <constraint firstItem="7Bu-eo-coE" firstAttribute="leading" secondItem="m5d-M1-Z5d" secondAttribute="leading" constant="15" id="bFe-bC-D1y"/>
+                            <constraint firstItem="TdC-Q8-LnS" firstAttribute="leading" secondItem="m5d-M1-Z5d" secondAttribute="leadingMargin" constant="21" id="cBc-aN-eFm"/>
+                            <constraint firstAttribute="trailing" secondItem="Y2L-Yn-od3" secondAttribute="trailing" constant="15" id="dVN-oo-FZV"/>
+                            <constraint firstItem="fuy-Ld-G8K" firstAttribute="top" secondItem="pFR-dY-206" secondAttribute="bottom" constant="2" id="dZh-iI-wyH"/>
+                            <constraint firstItem="bje-zo-UK4" firstAttribute="leading" secondItem="m5d-M1-Z5d" secondAttribute="leadingMargin" constant="21" id="f8i-Fi-5xQ"/>
+                            <constraint firstItem="qcB-bb-nb9" firstAttribute="leading" secondItem="m5d-M1-Z5d" secondAttribute="leadingMargin" constant="21" id="gKW-jo-Dyl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fuy-Ld-G8K" secondAttribute="trailing" constant="21" id="hT0-cK-48s"/>
+                            <constraint firstAttribute="trailing" secondItem="F14-eV-Mll" secondAttribute="trailing" constant="15" id="kn1-e2-SDY"/>
+                            <constraint firstItem="F14-eV-Mll" firstAttribute="leading" secondItem="m5d-M1-Z5d" secondAttribute="leading" constant="15" id="mqp-Nz-gRb"/>
+                            <constraint firstItem="pFR-dY-206" firstAttribute="leading" secondItem="m5d-M1-Z5d" secondAttribute="leadingMargin" constant="21" id="pk3-9r-BdL"/>
+                            <constraint firstItem="qcB-bb-nb9" firstAttribute="top" secondItem="TdC-Q8-LnS" secondAttribute="bottom" constant="2" id="uJ3-Ix-prL"/>
+                            <constraint firstItem="TdC-Q8-LnS" firstAttribute="top" secondItem="IV4-of-u6o" secondAttribute="bottom" constant="100" id="wVd-fD-j3X"/>
+                            <constraint firstItem="e2j-hO-GQC" firstAttribute="leading" secondItem="m5d-M1-Z5d" secondAttribute="leadingMargin" constant="21" id="yUS-np-7Vq"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="id-card" id="w7h-MQ-FdU"/>
@@ -154,50 +146,105 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHC-ly-row">
-                                <rect key="frame" x="58" y="220" width="259" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHC-ly-row">
+                                <rect key="frame" x="37" y="223" width="301" height="18"/>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit About Me:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfZ-rf-jNc">
-                                <rect key="frame" x="58" y="320" width="259" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit About Me:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfZ-rf-jNc">
+                                <rect key="frame" x="37" y="282" width="301" height="18"/>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="New Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4AR-nc-ZaA">
-                                <rect key="frame" x="58" y="166" width="259" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="New Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b6D-pu-Ajo">
-                                <rect key="frame" x="58" y="259" width="259" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="New About Me" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rkp-1C-cBk">
-                                <rect key="frame" x="58" y="357" width="259" height="142"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiB-0S-KYC">
-                                <rect key="frame" x="58" y="126" width="259" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4AR-nc-ZaA">
+                                <rect key="frame" x="37" y="184" width="301" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="2iW-aA-fI6"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b6D-pu-Ajo">
+                                <rect key="frame" x="37" y="243" width="301" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="DGs-40-emt"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiB-0S-KYC">
+                                <rect key="frame" x="37" y="164" width="301" height="18"/>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13Q-ng-8H8">
+                                <rect key="frame" x="15" y="212" width="345" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="BNj-g2-nf0"/>
+                                    <constraint firstAttribute="height" constant="1" id="wZN-qn-0bf"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1J-hg-g6B">
+                                <rect key="frame" x="15" y="271" width="345" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="Ajf-5D-6jw"/>
+                                    <constraint firstAttribute="height" constant="1" id="GpY-DW-9ku"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MxC-b4-012">
+                                <rect key="frame" x="15" y="392" width="345" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="g7q-fP-hHW"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New About Me" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="E0a-nl-ThE">
+                                <rect key="frame" x="37" y="302" width="301" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="ErN-nL-kPc"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="b6D-pu-Ajo" firstAttribute="top" secondItem="cHC-ly-row" secondAttribute="bottom" constant="2" id="6pW-le-fRM"/>
+                            <constraint firstItem="EfZ-rf-jNc" firstAttribute="leading" secondItem="eO2-PB-fmw" secondAttribute="leadingMargin" constant="21" id="7Xt-Ag-pjY"/>
+                            <constraint firstItem="oiB-0S-KYC" firstAttribute="leading" secondItem="eO2-PB-fmw" secondAttribute="leadingMargin" constant="21" id="7mN-Dh-Wfn"/>
+                            <constraint firstItem="cHC-ly-row" firstAttribute="leading" secondItem="eO2-PB-fmw" secondAttribute="leadingMargin" constant="21" id="8JT-E1-lU8"/>
+                            <constraint firstItem="b6D-pu-Ajo" firstAttribute="leading" secondItem="eO2-PB-fmw" secondAttribute="leadingMargin" constant="21" id="9K4-eb-fbN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4AR-nc-ZaA" secondAttribute="trailing" constant="21" id="DoA-Y9-3WR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cHC-ly-row" secondAttribute="trailing" constant="21" id="Gsc-cd-hV3"/>
+                            <constraint firstAttribute="trailing" secondItem="13Q-ng-8H8" secondAttribute="trailing" constant="15" id="NCc-ip-Mqz"/>
+                            <constraint firstItem="13Q-ng-8H8" firstAttribute="leading" secondItem="eO2-PB-fmw" secondAttribute="leading" constant="15" id="Nel-Z7-8Im"/>
+                            <constraint firstItem="E0a-nl-ThE" firstAttribute="leading" secondItem="eO2-PB-fmw" secondAttribute="leadingMargin" constant="21" id="ODy-uy-YLO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oiB-0S-KYC" secondAttribute="trailing" constant="21" id="Rar-19-jHQ"/>
+                            <constraint firstItem="13Q-ng-8H8" firstAttribute="top" secondItem="4AR-nc-ZaA" secondAttribute="bottom" constant="5" id="SRZ-f5-afg"/>
+                            <constraint firstAttribute="trailing" secondItem="F1J-hg-g6B" secondAttribute="trailing" constant="15" id="T5O-M7-Rv3"/>
+                            <constraint firstItem="F1J-hg-g6B" firstAttribute="top" secondItem="b6D-pu-Ajo" secondAttribute="bottom" constant="5" id="Vvc-U0-z7k"/>
+                            <constraint firstItem="EfZ-rf-jNc" firstAttribute="top" secondItem="F1J-hg-g6B" secondAttribute="bottom" constant="10" id="b3O-aA-6JB"/>
+                            <constraint firstItem="E0a-nl-ThE" firstAttribute="top" secondItem="EfZ-rf-jNc" secondAttribute="bottom" constant="2" id="bBB-fh-jxC"/>
+                            <constraint firstItem="4AR-nc-ZaA" firstAttribute="leading" secondItem="eO2-PB-fmw" secondAttribute="leadingMargin" constant="21" id="bFh-Z5-HFR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="b6D-pu-Ajo" secondAttribute="trailing" constant="21" id="gl4-uG-yCv"/>
+                            <constraint firstItem="4AR-nc-ZaA" firstAttribute="top" secondItem="oiB-0S-KYC" secondAttribute="bottom" constant="2" id="iKb-sD-pa1"/>
+                            <constraint firstItem="oiB-0S-KYC" firstAttribute="top" secondItem="sU6-qW-8H6" secondAttribute="bottom" constant="100" id="jQ3-M9-Bw6"/>
+                            <constraint firstAttribute="trailing" secondItem="MxC-b4-012" secondAttribute="trailing" constant="15" id="kqk-bZ-EW4"/>
+                            <constraint firstItem="F1J-hg-g6B" firstAttribute="leading" secondItem="eO2-PB-fmw" secondAttribute="leading" constant="15" id="li0-cT-Vka"/>
+                            <constraint firstItem="MxC-b4-012" firstAttribute="leading" secondItem="eO2-PB-fmw" secondAttribute="leading" constant="15" id="oPs-mf-3pc"/>
+                            <constraint firstItem="MxC-b4-012" firstAttribute="top" secondItem="E0a-nl-ThE" secondAttribute="bottom" constant="5" id="wmo-VW-Dqw"/>
+                            <constraint firstItem="cHC-ly-row" firstAttribute="top" secondItem="13Q-ng-8H8" secondAttribute="bottom" constant="10" id="x4j-Do-vm5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="E0a-nl-ThE" secondAttribute="trailing" constant="21" id="xa6-jq-5zr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EfZ-rf-jNc" secondAttribute="trailing" constant="21" id="z0t-dW-MGR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Profile" id="9U3-Es-qs8">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="Xrd-nv-wi0">
@@ -207,7 +254,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="aboutMeTextField" destination="rkp-1C-cBk" id="CrA-YS-thV"/>
+                        <outlet property="aboutMeTextField" destination="E0a-nl-ThE" id="VQi-6a-6qh"/>
                         <outlet property="barButton" destination="Xrd-nv-wi0" id="ga2-3p-kzW"/>
                         <outlet property="nameTextField" destination="4AR-nc-ZaA" id="Ctt-Pf-Tby"/>
                         <outlet property="usernameTextField" destination="b6D-pu-Ajo" id="6ts-Rh-tIu"/>
@@ -215,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fkg-Et-EzW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1338" y="-12"/>
+            <point key="canvasLocation" x="1336.8" y="-12.143928035982009"/>
         </scene>
         <!--Profile-->
         <scene sceneID="XHU-Kr-bka">
@@ -239,4 +286,5 @@
     <resources>
         <image name="id-card" width="30" height="30"/>
     </resources>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

@@ -33,12 +33,26 @@ class AllNewsTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Georgia", size: 20)!]
+        
+        ABC1.titleLabel?.adjustsFontSizeToFitWidth = true
+        AlJazeera1.titleLabel?.adjustsFontSizeToFitWidth = true
+        AP1.titleLabel?.adjustsFontSizeToFitWidth = true
+        BBC1.titleLabel?.adjustsFontSizeToFitWidth = true
+        BusinessInsider1.titleLabel?.adjustsFontSizeToFitWidth = true
+        CNBC1.titleLabel?.adjustsFontSizeToFitWidth = true
+        CNN1.titleLabel?.adjustsFontSizeToFitWidth = true
+        Economist1.titleLabel?.adjustsFontSizeToFitWidth = true
+        HuffingtonPost1.titleLabel?.adjustsFontSizeToFitWidth = true
+        Guardian1.titleLabel?.adjustsFontSizeToFitWidth = true
+        WashingtonPost1.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+
     }
     
     // ABC BUTTON
     @IBAction func ABC(_ sender: UIButton) {
-        if ABC1.backgroundColor == UIColor.gray {
-            ABC1.backgroundColor = UIColor.blue
+        if ABC1.backgroundColor == UIColor.white {
+            ABC1.backgroundColor = UIColor(red:0.69, green:0.90, blue:0.95, alpha:1.0)
             if others == false {
                 news = []
             }
@@ -73,14 +87,14 @@ class AllNewsTableViewController: UITableViewController {
             })
 
         }
-        else if ABC1.backgroundColor == UIColor.blue {
-            ABC1.backgroundColor = UIColor.gray
+        else if ABC1.backgroundColor == UIColor(red:0.69, green:0.90, blue:0.95, alpha:1.0) {
+            ABC1.backgroundColor = UIColor.white
             
             news = news.filter({ (new) -> Bool in
                 return !new.url.contains("abc.net.au")
             })
             
-            if ABC1.backgroundColor == UIColor.gray && AlJazeera1.backgroundColor == UIColor.gray && AP1.backgroundColor == UIColor.gray && BBC1.backgroundColor == UIColor.gray && BusinessInsider1.backgroundColor == UIColor.gray && CNBC1.backgroundColor == UIColor.gray && CNN1.backgroundColor == UIColor.gray && Economist1.backgroundColor == UIColor.gray && HuffingtonPost1.backgroundColor == UIColor.gray && Guardian1.backgroundColor == UIColor.gray && WashingtonPost1.backgroundColor == UIColor.gray {
+            if ABC1.backgroundColor == UIColor.white && AlJazeera1.backgroundColor == UIColor.white && AP1.backgroundColor == UIColor.white && BBC1.backgroundColor == UIColor.white && BusinessInsider1.backgroundColor == UIColor.white && CNBC1.backgroundColor == UIColor.white && CNN1.backgroundColor == UIColor.white && Economist1.backgroundColor == UIColor.white && HuffingtonPost1.backgroundColor == UIColor.white && Guardian1.backgroundColor == UIColor.white && WashingtonPost1.backgroundColor == UIColor.white {
                 reload()
                 others = false
             }
@@ -92,8 +106,8 @@ class AllNewsTableViewController: UITableViewController {
     
     // AL JAZEERA BUTTON
     @IBAction func AlJazeera(_ sender: UIButton) {
-        if AlJazeera1.backgroundColor == UIColor.gray {
-            AlJazeera1.backgroundColor = UIColor.blue
+        if AlJazeera1.backgroundColor == UIColor.white{
+            AlJazeera1.backgroundColor = UIColor(red:0.69, green:0.90, blue:0.95, alpha:1.0)
             if others == false {
                 news = []
             }
@@ -128,13 +142,13 @@ class AllNewsTableViewController: UITableViewController {
             })
         }
             
-        else if AlJazeera1.backgroundColor == UIColor.blue {
-            AlJazeera1.backgroundColor = UIColor.gray
+        else if AlJazeera1.backgroundColor == UIColor(red:0.69, green:0.90, blue:0.95, alpha:1.0) {
+            AlJazeera1.backgroundColor = UIColor.white
             news = news.filter({ (new) -> Bool in
                 return !new.url.contains("aljazeera.com")
             })
             
-            if ABC1.backgroundColor == UIColor.gray && AlJazeera1.backgroundColor == UIColor.gray && AP1.backgroundColor == UIColor.gray && BBC1.backgroundColor == UIColor.gray && BusinessInsider1.backgroundColor == UIColor.gray && CNBC1.backgroundColor == UIColor.gray && CNN1.backgroundColor == UIColor.gray && Economist1.backgroundColor == UIColor.gray && HuffingtonPost1.backgroundColor == UIColor.gray && Guardian1.backgroundColor == UIColor.gray && WashingtonPost1.backgroundColor == UIColor.gray {
+            if ABC1.backgroundColor == UIColor.white && AlJazeera1.backgroundColor == UIColor.white && AP1.backgroundColor == UIColor.white && BBC1.backgroundColor == UIColor.white && BusinessInsider1.backgroundColor == UIColor.white && CNBC1.backgroundColor == UIColor.white && CNN1.backgroundColor == UIColor.white && Economist1.backgroundColor == UIColor.white && HuffingtonPost1.backgroundColor == UIColor.white && Guardian1.backgroundColor == UIColor.white && WashingtonPost1.backgroundColor == UIColor.white{
                 reload()
                 others = false
             }
@@ -146,8 +160,8 @@ class AllNewsTableViewController: UITableViewController {
     
     // ASSOCIATED PRESS BUTTON
     @IBAction func AssociatedPress(_ sender: UIButton) {
-        if AP1.backgroundColor == UIColor.gray {
-            AP1.backgroundColor = UIColor.blue
+        if AP1.backgroundColor == UIColor.white{
+            AP1.backgroundColor = UIColor(red:0.69, green:0.90, blue:0.95, alpha:1.0)
             if others == false {
                 news = []
             }
@@ -181,13 +195,13 @@ class AllNewsTableViewController: UITableViewController {
                 self.others = true
             })
         }
-        else if AP1.backgroundColor == UIColor.blue {
-            AP1.backgroundColor = UIColor.gray
+        else if AP1.backgroundColor == UIColor(red:0.69, green:0.90, blue:0.95, alpha:1.0) {
+            AP1.backgroundColor = UIColor.white
             news = news.filter({ (new) -> Bool in
                 return !new.url.contains("apnews.com")
             })
             
-            if ABC1.backgroundColor == UIColor.gray && AlJazeera1.backgroundColor == UIColor.gray && AP1.backgroundColor == UIColor.gray && BBC1.backgroundColor == UIColor.gray && BusinessInsider1.backgroundColor == UIColor.gray && CNBC1.backgroundColor == UIColor.gray && CNN1.backgroundColor == UIColor.gray && Economist1.backgroundColor == UIColor.gray && HuffingtonPost1.backgroundColor == UIColor.gray && Guardian1.backgroundColor == UIColor.gray && WashingtonPost1.backgroundColor == UIColor.gray {
+            if ABC1.backgroundColor == UIColor.white && AlJazeera1.backgroundColor == UIColor.white && AP1.backgroundColor == UIColor.white && BBC1.backgroundColor == UIColor.white && BusinessInsider1.backgroundColor == UIColor.white && CNBC1.backgroundColor == UIColor.white && CNN1.backgroundColor == UIColor.white && Economist1.backgroundColor == UIColor.white && HuffingtonPost1.backgroundColor == UIColor.white && Guardian1.backgroundColor == UIColor.white && WashingtonPost1.backgroundColor == UIColor.white{
                 reload()
                 others = false
             }
@@ -198,8 +212,8 @@ class AllNewsTableViewController: UITableViewController {
     
     // BBC BUTTON
     @IBAction func BBC(_ sender: UIButton) {
-        if BBC1.backgroundColor == UIColor.gray {
-            BBC1.backgroundColor = UIColor.blue
+        if BBC1.backgroundColor == UIColor.white{
+            BBC1.backgroundColor = UIColor(red:0.69, green:0.90, blue:0.95, alpha:1.0)
             if others == false {
                 news = []
             }
@@ -233,13 +247,13 @@ class AllNewsTableViewController: UITableViewController {
             })
         }
             
-        else if BBC1.backgroundColor == UIColor.blue {
-            BBC1.backgroundColor = UIColor.gray
+        else if BBC1.backgroundColor == UIColor(red:0.69, green:0.90, blue:0.95, alpha:1.0) {
+            BBC1.backgroundColor = UIColor.white
             news = news.filter({ (new) -> Bool in
                 return !new.url.contains("bbc.co.uk")
             })
             
-            if ABC1.backgroundColor == UIColor.gray && AlJazeera1.backgroundColor == UIColor.gray && AP1.backgroundColor == UIColor.gray && BBC1.backgroundColor == UIColor.gray && BusinessInsider1.backgroundColor == UIColor.gray && CNBC1.backgroundColor == UIColor.gray && CNN1.backgroundColor == UIColor.gray && Economist1.backgroundColor == UIColor.gray && HuffingtonPost1.backgroundColor == UIColor.gray && Guardian1.backgroundColor == UIColor.gray && WashingtonPost1.backgroundColor == UIColor.gray {
+            if ABC1.backgroundColor == UIColor.white && AlJazeera1.backgroundColor == UIColor.white && AP1.backgroundColor == UIColor.white && BBC1.backgroundColor == UIColor.white && BusinessInsider1.backgroundColor == UIColor.white && CNBC1.backgroundColor == UIColor.white && CNN1.backgroundColor == UIColor.white && Economist1.backgroundColor == UIColor.white && HuffingtonPost1.backgroundColor == UIColor.white && Guardian1.backgroundColor == UIColor.white && WashingtonPost1.backgroundColor == UIColor.white{
                 reload()
                 others = false
             }
@@ -250,8 +264,8 @@ class AllNewsTableViewController: UITableViewController {
     
     // BUSINESS INSIDER BUTTON
     @IBAction func BusinessInsider(_ sender: UIButton) {
-        if BusinessInsider1.backgroundColor == UIColor.gray {
-            BusinessInsider1.backgroundColor = UIColor.blue
+        if BusinessInsider1.backgroundColor == UIColor.white{
+            BusinessInsider1.backgroundColor = UIColor(red:0.69, green:0.90, blue:0.95, alpha:1.0)
             if others == false {
                 news = []
             }
@@ -285,13 +299,13 @@ class AllNewsTableViewController: UITableViewController {
             })
             
         }
-        else if BusinessInsider1.backgroundColor == UIColor.blue {
-            BusinessInsider1.backgroundColor = UIColor.gray
+        else if BusinessInsider1.backgroundColor == UIColor(red:0.69, green:0.90, blue:0.95, alpha:1.0) {
+            BusinessInsider1.backgroundColor = UIColor.white
             news = news.filter({ (new) -> Bool in
                 return !new.url.contains("businessinsider.com")
             })
             
-            if ABC1.backgroundColor == UIColor.gray && AlJazeera1.backgroundColor == UIColor.gray && AP1.backgroundColor == UIColor.gray && BBC1.backgroundColor == UIColor.gray && BusinessInsider1.backgroundColor == UIColor.gray && CNBC1.backgroundColor == UIColor.gray && CNN1.backgroundColor == UIColor.gray && Economist1.backgroundColor == UIColor.gray && HuffingtonPost1.backgroundColor == UIColor.gray && Guardian1.backgroundColor == UIColor.gray && WashingtonPost1.backgroundColor == UIColor.gray {
+            if ABC1.backgroundColor == UIColor.white && AlJazeera1.backgroundColor == UIColor.white && AP1.backgroundColor == UIColor.white && BBC1.backgroundColor == UIColor.white && BusinessInsider1.backgroundColor == UIColor.white && CNBC1.backgroundColor == UIColor.white && CNN1.backgroundColor == UIColor.white && Economist1.backgroundColor == UIColor.white && HuffingtonPost1.backgroundColor == UIColor.white && Guardian1.backgroundColor == UIColor.white && WashingtonPost1.backgroundColor == UIColor.white{
                 reload()
                 others = false
             }
@@ -302,8 +316,8 @@ class AllNewsTableViewController: UITableViewController {
     
     // CNBC BUTTON
     @IBAction func CNBC(_ sender: UIButton) {
-        if CNBC1.backgroundColor == UIColor.gray {
-            CNBC1.backgroundColor = UIColor.blue
+        if CNBC1.backgroundColor == UIColor.white{
+            CNBC1.backgroundColor = UIColor(red:0.69, green:0.90, blue:0.95, alpha:1.0)
             if others == false {
                 news = []
             }
@@ -338,13 +352,13 @@ class AllNewsTableViewController: UITableViewController {
             })
         }
             
-        else if CNBC1.backgroundColor == UIColor.blue {
-            CNBC1.backgroundColor = UIColor.gray
+        else if CNBC1.backgroundColor == UIColor(red:0.69, green:0.90, blue:0.95, alpha:1.0) {
+            CNBC1.backgroundColor = UIColor.white
             news = news.filter({ (new) -> Bool in
                 return !new.url.contains("cnbc.com")
             })
             
-            if ABC1.backgroundColor == UIColor.gray && AlJazeera1.backgroundColor == UIColor.gray && AP1.backgroundColor == UIColor.gray && BBC1.backgroundColor == UIColor.gray && BusinessInsider1.backgroundColor == UIColor.gray && CNBC1.backgroundColor == UIColor.gray && CNN1.backgroundColor == UIColor.gray && Economist1.backgroundColor == UIColor.gray && HuffingtonPost1.backgroundColor == UIColor.gray && Guardian1.backgroundColor == UIColor.gray && WashingtonPost1.backgroundColor == UIColor.gray {
+            if ABC1.backgroundColor == UIColor.white && AlJazeera1.backgroundColor == UIColor.white && AP1.backgroundColor == UIColor.white && BBC1.backgroundColor == UIColor.white && BusinessInsider1.backgroundColor == UIColor.white && CNBC1.backgroundColor == UIColor.white && CNN1.backgroundColor == UIColor.white && Economist1.backgroundColor == UIColor.white && HuffingtonPost1.backgroundColor == UIColor.white && Guardian1.backgroundColor == UIColor.white && WashingtonPost1.backgroundColor == UIColor.white {
                 reload()
                 others = false
             }
@@ -355,8 +369,8 @@ class AllNewsTableViewController: UITableViewController {
     
     // CNN BUTTON
     @IBAction func CNN(_ sender: UIButton) {
-        if CNN1.backgroundColor == UIColor.gray {
-            CNN1.backgroundColor = UIColor.blue
+        if CNN1.backgroundColor == UIColor.white{
+            CNN1.backgroundColor = UIColor(red:0.69, green:0.90, blue:0.95, alpha:1.0)
             if others == false {
                 news = []
             }
@@ -393,13 +407,13 @@ class AllNewsTableViewController: UITableViewController {
             })
             
         }
-        else if CNN1.backgroundColor == UIColor.blue {
-            CNN1.backgroundColor = UIColor.gray
+        else if CNN1.backgroundColor == UIColor(red:0.69, green:0.90, blue:0.95, alpha:1.0) {
+            CNN1.backgroundColor = UIColor.white
             news = news.filter({ (new) -> Bool in
                 return !new.url.contains("cnn.com")
             })
             
-            if ABC1.backgroundColor == UIColor.gray && AlJazeera1.backgroundColor == UIColor.gray && AP1.backgroundColor == UIColor.gray && BBC1.backgroundColor == UIColor.gray && BusinessInsider1.backgroundColor == UIColor.gray && CNBC1.backgroundColor == UIColor.gray && CNN1.backgroundColor == UIColor.gray && Economist1.backgroundColor == UIColor.gray && HuffingtonPost1.backgroundColor == UIColor.gray && Guardian1.backgroundColor == UIColor.gray && WashingtonPost1.backgroundColor == UIColor.gray {
+            if ABC1.backgroundColor == UIColor.white && AlJazeera1.backgroundColor == UIColor.white && AP1.backgroundColor == UIColor.white && BBC1.backgroundColor == UIColor.white && BusinessInsider1.backgroundColor == UIColor.white && CNBC1.backgroundColor == UIColor.white && CNN1.backgroundColor == UIColor.white && Economist1.backgroundColor == UIColor.white && HuffingtonPost1.backgroundColor == UIColor.white && Guardian1.backgroundColor == UIColor.white && WashingtonPost1.backgroundColor == UIColor.white{
                 reload()
                 others = false
             }
@@ -411,8 +425,8 @@ class AllNewsTableViewController: UITableViewController {
     // ECONOMIST BUTTON
     
     @IBAction func Economist(_ sender: UIButton) {
-        if Economist1.backgroundColor == UIColor.gray {
-            Economist1.backgroundColor = UIColor.blue
+        if Economist1.backgroundColor == UIColor.white{
+            Economist1.backgroundColor = UIColor(red:0.69, green:0.90, blue:0.95, alpha:1.0)
             if others == false {
                 news = []
             }
@@ -448,13 +462,13 @@ class AllNewsTableViewController: UITableViewController {
 
             })
         }
-        else if Economist1.backgroundColor == UIColor.blue {
-            Economist1.backgroundColor = UIColor.gray
+        else if Economist1.backgroundColor == UIColor(red:0.69, green:0.90, blue:0.95, alpha:1.0) {
+            Economist1.backgroundColor = UIColor.white
             news = news.filter({ (new) -> Bool in
                 return !new.url.contains("economist.com")
             })
             
-            if ABC1.backgroundColor == UIColor.gray && AlJazeera1.backgroundColor == UIColor.gray && AP1.backgroundColor == UIColor.gray && BBC1.backgroundColor == UIColor.gray && BusinessInsider1.backgroundColor == UIColor.gray && CNBC1.backgroundColor == UIColor.gray && CNN1.backgroundColor == UIColor.gray && Economist1.backgroundColor == UIColor.gray && HuffingtonPost1.backgroundColor == UIColor.gray && Guardian1.backgroundColor == UIColor.gray && WashingtonPost1.backgroundColor == UIColor.gray {
+            if ABC1.backgroundColor == UIColor.white && AlJazeera1.backgroundColor == UIColor.white && AP1.backgroundColor == UIColor.white && BBC1.backgroundColor == UIColor.white && BusinessInsider1.backgroundColor == UIColor.white && CNBC1.backgroundColor == UIColor.white && CNN1.backgroundColor == UIColor.white && Economist1.backgroundColor == UIColor.white && HuffingtonPost1.backgroundColor == UIColor.white && Guardian1.backgroundColor == UIColor.white && WashingtonPost1.backgroundColor == UIColor.white{
                 reload()
                 others = false
             }
@@ -465,8 +479,8 @@ class AllNewsTableViewController: UITableViewController {
     
     // HUFFINGTON POST BUTTON
     @IBAction func HuffingtonPost(_ sender: UIButton) {
-        if HuffingtonPost1.backgroundColor == UIColor.gray {
-            HuffingtonPost1.backgroundColor = UIColor.blue
+        if HuffingtonPost1.backgroundColor == UIColor.white{
+            HuffingtonPost1.backgroundColor = UIColor(red:0.69, green:0.90, blue:0.95, alpha:1.0)
             if others == false {
                 news = []
             }
@@ -503,13 +517,13 @@ class AllNewsTableViewController: UITableViewController {
             })
 
         }
-        else if HuffingtonPost1.backgroundColor == UIColor.blue {
-            HuffingtonPost1.backgroundColor = UIColor.gray
+        else if HuffingtonPost1.backgroundColor == UIColor(red:0.69, green:0.90, blue:0.95, alpha:1.0) {
+            HuffingtonPost1.backgroundColor = UIColor.white
             news = news.filter({ (new) -> Bool in
                 return !new.url.contains("huffingtonpost.com")
             })
             
-            if ABC1.backgroundColor == UIColor.gray && AlJazeera1.backgroundColor == UIColor.gray && AP1.backgroundColor == UIColor.gray && BBC1.backgroundColor == UIColor.gray && BusinessInsider1.backgroundColor == UIColor.gray && CNBC1.backgroundColor == UIColor.gray && CNN1.backgroundColor == UIColor.gray && Economist1.backgroundColor == UIColor.gray && HuffingtonPost1.backgroundColor == UIColor.gray && Guardian1.backgroundColor == UIColor.gray && WashingtonPost1.backgroundColor == UIColor.gray {
+            if ABC1.backgroundColor == UIColor.white && AlJazeera1.backgroundColor == UIColor.white && AP1.backgroundColor == UIColor.white && BBC1.backgroundColor == UIColor.white && BusinessInsider1.backgroundColor == UIColor.white && CNBC1.backgroundColor == UIColor.white && CNN1.backgroundColor == UIColor.white && Economist1.backgroundColor == UIColor.white && HuffingtonPost1.backgroundColor == UIColor.white && Guardian1.backgroundColor == UIColor.white && WashingtonPost1.backgroundColor == UIColor.white{
                 reload()
                 others = false
             }
@@ -521,8 +535,8 @@ class AllNewsTableViewController: UITableViewController {
     
     // GUARDIAN BUTTON
     @IBAction func Guardian(_ sender: UIButton) {
-        if Guardian1.backgroundColor == UIColor.gray {
-            Guardian1.backgroundColor = UIColor.blue
+        if Guardian1.backgroundColor == UIColor.white{
+            Guardian1.backgroundColor = UIColor(red:0.69, green:0.90, blue:0.95, alpha:1.0)
             if others == false {
                 news = []
             }
@@ -558,13 +572,13 @@ class AllNewsTableViewController: UITableViewController {
 
             })
         }
-        else if Guardian1.backgroundColor == UIColor.blue {
-            Guardian1.backgroundColor = UIColor.gray
+        else if Guardian1.backgroundColor == UIColor(red:0.69, green:0.90, blue:0.95, alpha:1.0) {
+            Guardian1.backgroundColor = UIColor.white
             news = news.filter({ (new) -> Bool in
                 return !new.url.contains("theguardian.com")
             })
             
-            if ABC1.backgroundColor == UIColor.gray && AlJazeera1.backgroundColor == UIColor.gray && AP1.backgroundColor == UIColor.gray && BBC1.backgroundColor == UIColor.gray && BusinessInsider1.backgroundColor == UIColor.gray && CNBC1.backgroundColor == UIColor.gray && CNN1.backgroundColor == UIColor.gray && Economist1.backgroundColor == UIColor.gray && HuffingtonPost1.backgroundColor == UIColor.gray && Guardian1.backgroundColor == UIColor.gray && WashingtonPost1.backgroundColor == UIColor.gray {
+            if ABC1.backgroundColor == UIColor.white && AlJazeera1.backgroundColor == UIColor.white && AP1.backgroundColor == UIColor.white && BBC1.backgroundColor == UIColor.white && BusinessInsider1.backgroundColor == UIColor.white && CNBC1.backgroundColor == UIColor.white && CNN1.backgroundColor == UIColor.white && Economist1.backgroundColor == UIColor.white && HuffingtonPost1.backgroundColor == UIColor.white && Guardian1.backgroundColor == UIColor.white && WashingtonPost1.backgroundColor == UIColor.white{
                 reload()
                 others = false
             }
@@ -576,8 +590,8 @@ class AllNewsTableViewController: UITableViewController {
     
     // WASHINGTON POST BUTTON
     @IBAction func WashingtonPost(_ sender: UIButton) {
-        if WashingtonPost1.backgroundColor == UIColor.gray {
-            WashingtonPost1.backgroundColor = UIColor.blue
+        if WashingtonPost1.backgroundColor == UIColor.white{
+            WashingtonPost1.backgroundColor = UIColor(red:0.69, green:0.90, blue:0.95, alpha:1.0)
             if others == false {
                 news = []
             }
@@ -613,13 +627,13 @@ class AllNewsTableViewController: UITableViewController {
 
             })
         }
-        else if WashingtonPost1.backgroundColor == UIColor.blue {
-            WashingtonPost1.backgroundColor = UIColor.gray
+        else if WashingtonPost1.backgroundColor == UIColor(red:0.69, green:0.90, blue:0.95, alpha:1.0) {
+            WashingtonPost1.backgroundColor = UIColor.white
             news = news.filter({ (new) -> Bool in
                 return !new.url.contains("washingtonpost.com")
             })
             
-            if ABC1.backgroundColor == UIColor.gray && AlJazeera1.backgroundColor == UIColor.gray && AP1.backgroundColor == UIColor.gray && BBC1.backgroundColor == UIColor.gray && BusinessInsider1.backgroundColor == UIColor.gray && CNBC1.backgroundColor == UIColor.gray && CNN1.backgroundColor == UIColor.gray && Economist1.backgroundColor == UIColor.gray && HuffingtonPost1.backgroundColor == UIColor.gray && Guardian1.backgroundColor == UIColor.gray && WashingtonPost1.backgroundColor == UIColor.gray {
+            if ABC1.backgroundColor == UIColor.white && AlJazeera1.backgroundColor == UIColor.white && AP1.backgroundColor == UIColor.white && BBC1.backgroundColor == UIColor.white && BusinessInsider1.backgroundColor == UIColor.white && CNBC1.backgroundColor == UIColor.white && CNN1.backgroundColor == UIColor.white && Economist1.backgroundColor == UIColor.white && HuffingtonPost1.backgroundColor == UIColor.white && Guardian1.backgroundColor == UIColor.white && WashingtonPost1.backgroundColor == UIColor.white{
                 reload()
                 others = false
             }
@@ -633,29 +647,29 @@ class AllNewsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ABC1.backgroundColor = UIColor.gray
-        AlJazeera1.backgroundColor = UIColor.gray
-        AP1.backgroundColor = UIColor.gray
-        BBC1.backgroundColor = UIColor.gray
-        BusinessInsider1.backgroundColor = UIColor.gray
-        CNBC1.backgroundColor = UIColor.gray
-        CNN1.backgroundColor = UIColor.gray
-        Economist1.backgroundColor = UIColor.gray
-        HuffingtonPost1.backgroundColor = UIColor.gray
-        Guardian1.backgroundColor = UIColor.gray
-        WashingtonPost1.backgroundColor = UIColor.gray
+        ABC1.backgroundColor = UIColor.white
+        AlJazeera1.backgroundColor = UIColor.white
+        AP1.backgroundColor = UIColor.white
+        BBC1.backgroundColor = UIColor.white
+        BusinessInsider1.backgroundColor = UIColor.white
+        CNBC1.backgroundColor = UIColor.white
+        CNN1.backgroundColor = UIColor.white
+        Economist1.backgroundColor = UIColor.white
+        HuffingtonPost1.backgroundColor = UIColor.white
+        Guardian1.backgroundColor = UIColor.white
+        WashingtonPost1.backgroundColor = UIColor.white
         
-        ABC1.layer.cornerRadius = 5
-        AlJazeera1.layer.cornerRadius = 5
-        AP1.layer.cornerRadius = 5
-        BBC1.layer.cornerRadius = 5
-        BusinessInsider1.layer.cornerRadius = 5
-        CNBC1.layer.cornerRadius = 5
-        CNN1.layer.cornerRadius = 5
-        Economist1.layer.cornerRadius = 5
-        HuffingtonPost1.layer.cornerRadius = 5
-        Guardian1.layer.cornerRadius = 5
-        WashingtonPost1.layer.cornerRadius = 5
+        ABC1.layer.cornerRadius = 8
+        AlJazeera1.layer.cornerRadius = 8
+        AP1.layer.cornerRadius = 8
+        BBC1.layer.cornerRadius = 8
+        BusinessInsider1.layer.cornerRadius = 8
+        CNBC1.layer.cornerRadius = 8
+        CNN1.layer.cornerRadius = 8
+        Economist1.layer.cornerRadius = 8
+        HuffingtonPost1.layer.cornerRadius = 8
+        Guardian1.layer.cornerRadius = 8
+        WashingtonPost1.layer.cornerRadius = 8
         
         MBProgressHUD.showAdded(to: self.view, animated: true)
         
@@ -667,7 +681,7 @@ class AllNewsTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if ABC1.backgroundColor == UIColor.gray && AlJazeera1.backgroundColor == UIColor.gray && AP1.backgroundColor == UIColor.gray && BBC1.backgroundColor == UIColor.gray && BusinessInsider1.backgroundColor == UIColor.gray && CNBC1.backgroundColor == UIColor.gray && CNN1.backgroundColor == UIColor.gray && Economist1.backgroundColor == UIColor.gray && HuffingtonPost1.backgroundColor == UIColor.gray && Guardian1.backgroundColor == UIColor.gray && WashingtonPost1.backgroundColor == UIColor.gray {
+        if ABC1.backgroundColor == UIColor.white && AlJazeera1.backgroundColor == UIColor.white && AP1.backgroundColor == UIColor.white && BBC1.backgroundColor == UIColor.white && BusinessInsider1.backgroundColor == UIColor.white && CNBC1.backgroundColor == UIColor.white && CNN1.backgroundColor == UIColor.white && Economist1.backgroundColor == UIColor.white && HuffingtonPost1.backgroundColor == UIColor.white && Guardian1.backgroundColor == UIColor.white && WashingtonPost1.backgroundColor == UIColor.white{
             reload()
             others = false
         }
@@ -889,6 +903,14 @@ class AllNewsTableViewController: UITableViewController {
         cell.titleLabel.text = new.title
         cell.dateLabel.text = new.date2!.toString1(dateFormat: "dd-MMM-yyyy HH:mm:ss")
 //        cell.urlLabel.text = new.url
+//        
+//        var separatorLineView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 0.8))
+//        /// change size as you need.
+//        separatorLineView.backgroundColor = UIColor(red:0.16, green:0.16, blue:0.50, alpha:1.0)
+//        
+//
+//        // you can also put image here
+//        cell.contentView.addSubview(separatorLineView)
         
         return cell
     }

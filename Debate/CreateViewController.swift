@@ -45,7 +45,10 @@ class CreateViewController: UIViewController {
                 let alert = UIAlertController(title: "Error", message: "Please enter a group name", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
-
+            } else if groupName.characters.count > 35 {
+                let alert = UIAlertController(title: "Error", message: "Group name too long, max 35 characters", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             } else {
                 groupNameTaken = false
                 GroupService.create(firUser, groupName: groupName, users: users) { (group1) in
@@ -68,6 +71,7 @@ class CreateViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         userAdded()
+        groupNameTextField.attributedPlaceholder = NSAttributedString(string: "Group name",attributes: [NSForegroundColorAttributeName: UIColor(red:0.59, green:0.59, blue:0.59, alpha:1.0)])
         UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Georgia", size: 17)!], for: .normal)
 
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Georgia", size: 20)!]

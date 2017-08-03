@@ -17,24 +17,27 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" id="xQp-hP-bbd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1169593069" green="0.11529790819999999" blue="0.12095100640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search by title" id="mlm-J0-LMm">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="personalArchivesTableViewCell" id="M3s-o2-eFa" customClass="PersonalArchivesTableViewCell" customModule="Debate" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="personalArchivesTableViewCell" id="M3s-o2-eFa" customClass="PersonalArchivesTableViewCell" customModule="Debate" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M3s-o2-eFa" id="Agq-DT-JNw">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dE-h4-7B3">
-                                            <rect key="frame" x="8" y="5" width="172" height="21"/>
-                                            <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="18"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dE-h4-7B3">
+                                            <rect key="frame" x="8" y="5" width="169" height="21"/>
+                                            <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="18"/>
+                                            <color key="textColor" red="0.97799720290000003" green="0.98109567900000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5qt-BX-AUb">
@@ -45,24 +48,27 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z31-tF-PWt">
-                                            <rect key="frame" x="8" y="116.5" width="164" height="19"/>
+                                            <rect key="frame" x="8" y="116.5" width="169" height="19"/>
                                             <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="16"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.97799720290000003" green="0.98109567900000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.32153671882622609" green="0.4575685105607149" blue="0.7477204907161803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.11695930694511995" green="0.11529790823175416" blue="0.12095100640901857" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="tintColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="6dE-h4-7B3" secondAttribute="trailing" constant="195" id="08d-VF-aFj"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="5qt-BX-AUb" secondAttribute="trailing" id="Bt6-wX-ljK"/>
                                         <constraint firstItem="6dE-h4-7B3" firstAttribute="top" secondItem="Agq-DT-JNw" secondAttribute="top" constant="5" id="IsM-I4-aQW"/>
                                         <constraint firstItem="Z31-tF-PWt" firstAttribute="leading" secondItem="Agq-DT-JNw" secondAttribute="leadingMargin" id="S2J-ya-60l"/>
+                                        <constraint firstItem="5qt-BX-AUb" firstAttribute="leading" secondItem="6dE-h4-7B3" secondAttribute="trailing" constant="10" id="TiW-5L-U7D"/>
                                         <constraint firstItem="6dE-h4-7B3" firstAttribute="leading" secondItem="Agq-DT-JNw" secondAttribute="leading" constant="8" id="VKi-l3-2fW"/>
                                         <constraint firstItem="5qt-BX-AUb" firstAttribute="top" secondItem="Agq-DT-JNw" secondAttribute="topMargin" constant="3" id="XpA-Yf-dw6"/>
                                         <constraint firstItem="Z31-tF-PWt" firstAttribute="bottom" secondItem="Agq-DT-JNw" secondAttribute="bottomMargin" constant="4" id="Yed-tK-s1b"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Z31-tF-PWt" secondAttribute="trailing" constant="195" id="spD-7m-QpH"/>
+                                        <constraint firstItem="5qt-BX-AUb" firstAttribute="leading" secondItem="Z31-tF-PWt" secondAttribute="trailing" constant="10" id="sf7-TE-7nd"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="tintColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <connections>
                                     <outlet property="dateLabel" destination="Z31-tF-PWt" id="Gff-Dv-153"/>
                                     <outlet property="image1" destination="5qt-BX-AUb" id="1GU-H8-DW2"/>
@@ -148,4 +154,5 @@
     <resources>
         <image name="file" width="30" height="30"/>
     </resources>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

@@ -14,26 +14,26 @@ import FirebaseDatabase
 
 struct UserService {
     static func create(_ firUser: FIRUser, username: String, name: String, aboutMe: String, completion: @escaping (User?) -> Void) {
-    let userAttrs = ["username": username,
-                     "name" : name,
-                     "aboutMe" : aboutMe,
-                     "email": Auth.auth().currentUser!.email!,
-                     "groups": ["abc"]] as [String : Any]
-    
-    let ref = Database.database().reference().child("users").child(firUser.uid)
-    ref.setValue(userAttrs) { (error, ref) in
-        if let error = error {
-            assertionFailure(error.localizedDescription)
-            return completion(nil)
+        let userAttrs = ["username": username,
+                         "name" : name,
+                         "aboutMe" : aboutMe,
+                         "email": Auth.auth().currentUser!.email!,
+                         "groups": ["abc"]] as [String : Any]
+        
+        let ref = Database.database().reference().child("users").child(firUser.uid)
+        ref.setValue(userAttrs) { (error, ref) in
+            if let error = error {
+                assertionFailure(error.localizedDescription)
+                return completion(nil)
+            }
+            
+            ref.observeSingleEvent(of: .value, with: { (snapshot) in
+                let user = User(snapshot: snapshot)
+                completion(user)
+            })
         }
         
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            let user = User(snapshot: snapshot)
-            completion(user)
-        })
     }
-        
-}
     
     static func addToGroup(uid: String, groupID: String) {
         let ref3 = Database.database().reference().child("users").child(uid)
@@ -54,14 +54,14 @@ struct UserService {
         })
     }
     
-            
-//        Database.database().reference().child("groups").child(firstTree).child("users")[childIWantToRemove].removeValueWithCompletionBlock { (error, ref) in
-//            if error != nil {
-//                print("error \(error)")
-//            }
-//       }
-
-
+    
+    //        Database.database().reference().child("groups").child(firstTree).child("users")[childIWantToRemove].removeValueWithCompletionBlock { (error, ref) in
+    //            if error != nil {
+    //                print("error \(error)")
+    //            }
+    //       }
+    
+    
     static func leave(groupID: String, username: String) {
         
         var allGroups = [String]()
@@ -95,12 +95,12 @@ struct UserService {
                 allUsers.append((snap.value as? String)!)
             }
             
-        var index = allUsers.index(of: username)
-        allUsers.remove(at: index!)
+            var index = allUsers.index(of: username)
+            allUsers.remove(at: index!)
             ref.setValue(allUsers)
-
+            
             if allUsers == [] {
-              Database.database().reference().child("groups").child(groupID).removeValue()
+                Database.database().reference().child("groups").child(groupID).removeValue()
             }
         })
     }
@@ -114,21 +114,23 @@ struct UserService {
             for group in snapshot {
                 
                 if group.value as? String != "abc" {
-                let ref3 = Database.database().reference().child("groups").child((group.value as? String)!).child("users")
-                ref3.observeSingleEvent(of: .value, with: { (users) in
-                    guard var users = users.children.allObjects as? [DataSnapshot]
-                        else {return}
-                    var allUsers = [String]()
-                    for user in users {
-                        allUsers.append((user.value as? String)!)
-                    }
-                    var index = allUsers.index(of: oldName)
-                    allUsers[index!] = new
-                    ref3.setValue(allUsers)
-                    completion(index)
-                })
+                    let ref3 = Database.database().reference().child("groups").child((group.value as? String)!).child("users")
+                    ref3.observeSingleEvent(of: .value, with: { (users) in
+                        guard var users = users.children.allObjects as? [DataSnapshot]
+                            else {return completion(-1)}
+                        var allUsers = [String]()
+                        for user in users {
+                            allUsers.append((user.value as? String)!)
+                        }
+                        var index = allUsers.index(of: oldName)
+                        allUsers[index!] = new
+                        ref3.setValue(allUsers)
+                    })
+                } else {
                 }
             }
+            
+            completion(-1)
         })
     }
     

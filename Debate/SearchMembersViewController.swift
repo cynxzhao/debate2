@@ -121,7 +121,6 @@ extension SearchMembersViewController: UITableViewDataSource {
         } else {
             user = users[indexPath.row]
         }
-        
         cell.usernameLabel.text = user.username
         cell.nameLabel.text = user.name
         
