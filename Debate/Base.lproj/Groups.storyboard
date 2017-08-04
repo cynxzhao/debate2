@@ -181,6 +181,11 @@
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ekr-9W-RgD">
+                                                    <rect key="frame" x="8" y="5" width="348" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="O6e-4c-Dag" firstAttribute="top" secondItem="T8g-fu-cSu" secondAttribute="topMargin" id="FjH-ke-ZQS"/>
@@ -192,6 +197,7 @@
                                         </tableViewCellContentView>
                                         <gestureRecognizers/>
                                         <connections>
+                                            <outlet property="coverView" destination="ekr-9W-RgD" id="zYD-AS-ZJL"/>
                                             <outlet property="nameLabel" destination="qAD-sa-S3p" id="MGb-Vu-Q4F"/>
                                             <outlet property="usernameLabel" destination="O6e-4c-Dag" id="x16-N2-JoQ"/>
                                         </connections>

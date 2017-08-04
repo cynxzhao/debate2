@@ -23,19 +23,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfN-eA-aax">
-                                <rect key="frame" x="37" y="164" width="301" height="19.5"/>
+                                <rect key="frame" x="37" y="164" width="50.5" height="19.5"/>
                                 <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
                                 <color key="textColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7T-N2-8tT">
-                                <rect key="frame" x="37" y="224.5" width="301" height="19.5"/>
+                                <rect key="frame" x="37" y="224.5" width="83" height="19.5"/>
                                 <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
                                 <color key="textColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Me:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGW-GF-h7I">
-                                <rect key="frame" x="37" y="285" width="301" height="19.5"/>
+                                <rect key="frame" x="37" y="285" width="79.5" height="19.5"/>
                                 <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
                                 <color key="textColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -92,10 +92,8 @@
                             <constraint firstAttribute="trailingMargin" secondItem="TcB-6i-CbH" secondAttribute="trailing" constant="21" id="9wV-Mm-fgr"/>
                             <constraint firstItem="z84-fR-qfI" firstAttribute="leading" secondItem="OVE-cb-Te0" secondAttribute="leadingMargin" constant="21" id="A5G-PR-9Ug"/>
                             <constraint firstItem="qRJ-52-PEK" firstAttribute="top" secondItem="TcB-6i-CbH" secondAttribute="bottom" constant="5" id="Abh-Gz-OIo"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="kfN-eA-aax" secondAttribute="trailing" constant="21" id="AnY-PK-C4r"/>
                             <constraint firstItem="kfN-eA-aax" firstAttribute="top" secondItem="4jc-fx-kBm" secondAttribute="bottom" constant="100" id="BJe-AP-zTi"/>
                             <constraint firstItem="TcB-6i-CbH" firstAttribute="top" secondItem="R7T-N2-8tT" secondAttribute="bottom" constant="2" id="Izl-L4-dPE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="R7T-N2-8tT" secondAttribute="trailing" constant="21" id="SMI-rO-siE"/>
                             <constraint firstItem="iBB-3Z-KUp" firstAttribute="leading" secondItem="OVE-cb-Te0" secondAttribute="leading" constant="15" id="Uwm-44-TsJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="z84-fR-qfI" secondAttribute="trailing" constant="21" id="WQb-ah-Drp"/>
                             <constraint firstItem="Jhc-Hg-hMH" firstAttribute="top" secondItem="VGW-GF-h7I" secondAttribute="bottom" constant="2" id="WVC-hi-SZr"/>
@@ -105,7 +103,6 @@
                             <constraint firstItem="kfN-eA-aax" firstAttribute="top" secondItem="4jc-fx-kBm" secondAttribute="bottom" constant="100" id="f5O-nK-7OE"/>
                             <constraint firstItem="Jhc-Hg-hMH" firstAttribute="leading" secondItem="OVE-cb-Te0" secondAttribute="leadingMargin" constant="21" id="hXh-U3-mvq"/>
                             <constraint firstItem="dqK-Lr-KMe" firstAttribute="top" secondItem="Jhc-Hg-hMH" secondAttribute="bottom" constant="5" id="idb-Xv-HXg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="VGW-GF-h7I" secondAttribute="trailing" constant="21" id="jKa-PK-tLD"/>
                             <constraint firstItem="R7T-N2-8tT" firstAttribute="top" secondItem="iBB-3Z-KUp" secondAttribute="bottom" constant="10" id="jpM-vy-maS"/>
                             <constraint firstItem="dqK-Lr-KMe" firstAttribute="leading" secondItem="OVE-cb-Te0" secondAttribute="leading" constant="15" id="lTD-76-i2R"/>
                             <constraint firstItem="z84-fR-qfI" firstAttribute="top" secondItem="kfN-eA-aax" secondAttribute="bottom" constant="2" id="lxQ-4N-Gyk"/>
@@ -151,7 +148,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IB6-wG-dOh">
-                                            <rect key="frame" x="16" y="8" width="343" height="20"/>
+                                            <rect key="frame" x="16" y="8" width="77.5" height="20"/>
                                             <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -159,7 +156,6 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="IB6-wG-dOh" firstAttribute="top" secondItem="yCJ-mc-RSL" secondAttribute="topMargin" id="Bzu-Sv-VGl"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="IB6-wG-dOh" secondAttribute="trailing" constant="8" id="EG7-md-xQT"/>
                                         <constraint firstItem="IB6-wG-dOh" firstAttribute="leading" secondItem="yCJ-mc-RSL" secondAttribute="leadingMargin" constant="8" id="qfw-gh-a2Q"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -212,7 +208,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tv5-lv-EUJ">
-                                            <rect key="frame" x="16" y="11.5" width="343" height="20"/>
+                                            <rect key="frame" x="16" y="11.5" width="77.5" height="20"/>
                                             <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -220,7 +216,6 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="tv5-lv-EUJ" secondAttribute="bottom" constant="4" id="Qha-aJ-WpB"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="tv5-lv-EUJ" secondAttribute="trailing" constant="8" id="ZYy-vs-Shu"/>
                                         <constraint firstItem="tv5-lv-EUJ" firstAttribute="leading" secondItem="vIN-1K-QSQ" secondAttribute="leadingMargin" constant="8" id="dgJ-JQ-ZeU"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -383,12 +378,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xcG-qZ-rKx" firstAttribute="top" secondItem="JTi-lt-PCG" secondAttribute="bottom" constant="-64" id="0NP-pS-kp3"/>
+                            <constraint firstItem="jBK-WH-4Jn" firstAttribute="centerX" secondItem="fT1-WJ-ptf" secondAttribute="centerX" id="2o0-1W-SlJ"/>
                             <constraint firstItem="uaR-aV-gVW" firstAttribute="top" secondItem="jBK-WH-4Jn" secondAttribute="bottom" constant="333" id="HLM-jH-67u"/>
                             <constraint firstItem="xcG-qZ-rKx" firstAttribute="leading" secondItem="fT1-WJ-ptf" secondAttribute="leading" id="KAn-45-D0A"/>
                             <constraint firstItem="uaR-aV-gVW" firstAttribute="top" secondItem="xcG-qZ-rKx" secondAttribute="bottom" constant="-44" id="R14-uD-X2F"/>
                             <constraint firstAttribute="trailing" secondItem="xcG-qZ-rKx" secondAttribute="trailing" id="h7H-4d-Lke"/>
-                            <constraint firstItem="jBK-WH-4Jn" firstAttribute="leading" secondItem="fT1-WJ-ptf" secondAttribute="leadingMargin" constant="153" id="iYD-NI-0hH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jBK-WH-4Jn" secondAttribute="trailing" constant="153" id="jxm-6a-c47"/>
                         </constraints>
                     </view>
                     <connections>

@@ -113,13 +113,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="LlW-1k-Caf" firstAttribute="leading" secondItem="TCI-JH-Ahm" secondAttribute="leadingMargin" constant="153" id="Mt0-0t-DWy"/>
+                            <constraint firstItem="LlW-1k-Caf" firstAttribute="centerX" secondItem="TCI-JH-Ahm" secondAttribute="centerX" id="2Ga-mn-Qzl"/>
                             <constraint firstItem="fI6-FU-02z" firstAttribute="top" secondItem="TCI-JH-Ahm" secondAttribute="top" id="Nz7-GV-NVj"/>
                             <constraint firstItem="4uc-58-yHW" firstAttribute="top" secondItem="LlW-1k-Caf" secondAttribute="bottom" constant="333" id="Tfh-mT-Axm"/>
                             <constraint firstItem="fI6-FU-02z" firstAttribute="leading" secondItem="TCI-JH-Ahm" secondAttribute="leading" id="ZgP-Jr-x4i"/>
                             <constraint firstAttribute="bottom" secondItem="fI6-FU-02z" secondAttribute="bottom" id="lw4-Wb-gRn"/>
                             <constraint firstAttribute="trailing" secondItem="fI6-FU-02z" secondAttribute="trailing" id="ofB-Ny-MJd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="LlW-1k-Caf" secondAttribute="trailing" constant="153" id="vzU-pO-317"/>
                         </constraints>
                     </view>
                     <connections>

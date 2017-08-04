@@ -10,9 +10,10 @@ import UIKit
 import FirebaseDatabase
 
 class SearchMembersViewController: UIViewController {
-
+    
     var users = [User]()
     var filteredUsers = [User]()
+    var search = false
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -30,6 +31,7 @@ class SearchMembersViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        searchController.searchBar.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -50,11 +52,12 @@ class SearchMembersViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        search = false
         
         UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Georgia", size: 17)!], for: .normal)
-
+        
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Georgia", size: 20)!]
-
+        
         let ref = Database.database().reference().child("users")
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
@@ -68,7 +71,7 @@ class SearchMembersViewController: UIViewController {
         })
         
     }
-
+    
     override func viewDidDisappear(_ animated: Bool) {
         self.users = []
     }
@@ -103,7 +106,7 @@ class SearchMembersViewController: UIViewController {
 }
 
 extension SearchMembersViewController: UITableViewDataSource {
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchController.isActive && searchController.searchBar.text != "" {
             return filteredUsers.count
@@ -121,33 +124,47 @@ extension SearchMembersViewController: UITableViewDataSource {
         } else {
             user = users[indexPath.row]
         }
+        
         cell.usernameLabel.text = user.username
         cell.nameLabel.text = user.name
+        cell.isUserInteractionEnabled = false
+        if search == true {
+        cell.coverView.isHidden = true
+        cell.isUserInteractionEnabled = true
+        }
         
         return cell
     }
-
+    
 }
 
-    extension SearchMembersViewController: UITableViewDelegate {
-        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-           return 60
+extension SearchMembersViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
 }
 
 extension SearchMembersViewController : UISearchResultsUpdating {
-
+    
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchText: searchController.searchBar.text!)
     }
 }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension SearchMembersViewController : UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("hi")
+        search = true
+        tableView.reloadData()
     }
-    */
+}
+
+/*
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destinationViewController.
+ // Pass the selected object to the new view controller.
+ }
+ */
