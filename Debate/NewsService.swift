@@ -79,8 +79,4 @@ struct NewsService {
         }
     }
     
-    static func delete() {
-        Database.database().reference().child("groups")
-    }
-    
 }

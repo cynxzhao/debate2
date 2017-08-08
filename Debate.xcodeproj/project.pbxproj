@@ -50,6 +50,9 @@
 		CA8DAE401F195F2200EE210F /* MembersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8DAE3F1F195F2200EE210F /* MembersTableViewCell.swift */; };
 		CA8DAE421F195F2D00EE210F /* SearchAllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8DAE411F195F2D00EE210F /* SearchAllTableViewCell.swift */; };
 		CA9298721F30EAA90059F479 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9298711F30EAA90059F479 /* InfoViewController.swift */; };
+		CA9396771F3A37F500E95BBF /* Goldoni_DEMO.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA9396751F3A37F500E95BBF /* Goldoni_DEMO.otf */; };
+		CA9396781F3A37F500E95BBF /* MORVA.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA9396761F3A37F500E95BBF /* MORVA.otf */; };
+		CACD30821F361290001DFD64 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACD30811F361290001DFD64 /* Launch Screen.storyboard */; };
 		CAE9EF2E1F211F0D00F51AF5 /* SendNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE9EF2D1F211F0D00F51AF5 /* SendNewsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +104,9 @@
 		CA8DAE3F1F195F2200EE210F /* MembersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembersTableViewCell.swift; sourceTree = "<group>"; };
 		CA8DAE411F195F2D00EE210F /* SearchAllTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAllTableViewCell.swift; sourceTree = "<group>"; };
 		CA9298711F30EAA90059F479 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		CA9396751F3A37F500E95BBF /* Goldoni_DEMO.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Goldoni_DEMO.otf; path = ../Goldoni_DEMO.otf; sourceTree = "<group>"; };
+		CA9396761F3A37F500E95BBF /* MORVA.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MORVA.otf; path = ../MORVA.otf; sourceTree = "<group>"; };
+		CACD30811F361290001DFD64 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		CAE9EF2D1F211F0D00F51AF5 /* SendNewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendNewsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +160,8 @@
 		CA1ABDC41F1427EC00615629 /* Debate */ = {
 			isa = PBXGroup;
 			children = (
+				CA9396751F3A37F500E95BBF /* Goldoni_DEMO.otf */,
+				CA9396761F3A37F500E95BBF /* MORVA.otf */,
 				CA1ABDDB1F14288200615629 /* Storyboards */,
 				CA1ABDD91F14284400615629 /* View Controllers */,
 				CA1ABDDA1F14287600615629 /* Services */,
@@ -210,6 +218,7 @@
 				CA1ABE1D1F144B4B00615629 /* Archives.storyboard */,
 				CA1ABE1B1F1449AA00615629 /* GroupNews.storyboard */,
 				CA1ABDE41F1428DB00615629 /* Profile.storyboard */,
+				CACD30811F361290001DFD64 /* Launch Screen.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -345,6 +354,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA9396771F3A37F500E95BBF /* Goldoni_DEMO.otf in Resources */,
+				CA9396781F3A37F500E95BBF /* MORVA.otf in Resources */,
 				CA1ABDDD1F14289800615629 /* Login.storyboard in Resources */,
 				CA1ABDD01F1427EC00615629 /* LaunchScreen.storyboard in Resources */,
 				CA1ABDCD1F1427EC00615629 /* Assets.xcassets in Resources */,
@@ -353,6 +364,7 @@
 				CA1ABE1F1F144B4B00615629 /* Archives.storyboard in Resources */,
 				CA1ABDCB1F1427EC00615629 /* Groups.storyboard in Resources */,
 				CA1ABDE51F1428DB00615629 /* Profile.storyboard in Resources */,
+				CACD30821F361290001DFD64 /* Launch Screen.storyboard in Resources */,
 				CA1ABE241F144C6600615629 /* AllNews.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

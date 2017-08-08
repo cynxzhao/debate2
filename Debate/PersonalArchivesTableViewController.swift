@@ -12,6 +12,8 @@ import AFNetworking
 
 class PersonalArchivesTableViewController: UITableViewController {
     
+    @IBOutlet weak var noNews: UIView!
+    
     var new : News?
     var news = [News]()
     
@@ -20,6 +22,7 @@ class PersonalArchivesTableViewController: UITableViewController {
     let searchController = UISearchController(searchResultsController: nil)
     
     override func viewWillAppear(_ animated: Bool) {
+        noNews.isHidden = true
         super.viewWillAppear(animated)
         searchController.searchBar.barStyle = UIBarStyle.blackTranslucent
         //changes color of navigation controller
@@ -74,7 +77,9 @@ class PersonalArchivesTableViewController: UITableViewController {
             }
             
             self.tableView.reloadData()
-            
+            if self.news.count == 0 {
+                self.noNews.isHidden = false
+            }
         })
         
     }
@@ -106,7 +111,15 @@ class PersonalArchivesTableViewController: UITableViewController {
         }
         
         cell.titleLabel.text = new.title
-        cell.dateLabel.text = new.date2!.toString2(dateFormat: "dd-MMM-yyyy HH:mm:ss")
+        let now1 = new.date2!.timeIntervalSinceNow
+        let now = now1 - 25200
+        if convertSecondToDateAgo(seconds: Int(-now)).contains("-") {
+            cell.dateLabel.text = ""
+        } else {
+            cell.dateLabel.text = convertSecondToDateAgo(seconds: Int(-now))
+        }
+
+//        cell.dateLabel.text = new.date2!.toString2(dateFormat: "dd-MMM-yyyy HH:mm:ss")
         if new.imageURL != "" {
             let picURL = URL(string: (new.imageURL)!)!
             cell.image1.setImageWith(picURL)
@@ -115,9 +128,21 @@ class PersonalArchivesTableViewController: UITableViewController {
             cell.image1.setImageWith(picURL!)
         }
         
-        
-        
         return cell
+    }
+    
+    func convertSecondToDateAgo(seconds: Int) -> String {
+        var result: String?
+        if(seconds <= 59) {
+            result = "\(seconds) s"
+        } else if(seconds/60 <= 59) {
+            result = "\(seconds/60) m"
+        } else if (seconds/3600 <= 23) {
+            result = "\(seconds/3600) h"
+        } else {
+            result = "\(seconds/86400) d"
+        }
+        return result!
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

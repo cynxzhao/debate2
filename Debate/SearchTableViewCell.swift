@@ -14,7 +14,6 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
-    @IBOutlet weak var coverView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

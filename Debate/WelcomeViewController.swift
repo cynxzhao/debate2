@@ -15,11 +15,19 @@ typealias FIRUser = FirebaseAuth.User
 
 class WelcomeViewController: UIViewController {
     
+    @IBOutlet weak var imageView: UIImageView!
 
     @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        // 2
+        let blurView = UIVisualEffectView(effect: darkBlur)
+        blurView.frame = imageView.bounds
+        // 3
+        imageView.addSubview(blurView)
 
         // Do any additional setup after loading the view.
     }
@@ -57,7 +65,7 @@ extension WelcomeViewController: FUIAuthDelegate {
     
     func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
         if let error = error {
-            assertionFailure("Error signing in: \(error.localizedDescription)")
+            //assertionFailure("Error signing in: \(error.localizedDescription)")
             return
         }
         

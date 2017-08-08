@@ -15,6 +15,9 @@ class SearchMembersViewController: UIViewController {
     var filteredUsers = [User]()
     var search = false
     
+    @IBOutlet weak var noUsersView: UIView!
+    
+    
     let searchController = UISearchController(searchResultsController: nil)
     
     @IBOutlet weak var tableView: UITableView!
@@ -23,10 +26,10 @@ class SearchMembersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchController.searchResultsUpdater = self as! UISearchResultsUpdating
+        //searchController.searchResultsUpdater = self as! UISearchResultsUpdating
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
-        searchController.searchBar.placeholder = "Search by username"
+        searchController.searchBar.placeholder = "Search for users with username"
         tableView.tableHeaderView = searchController.searchBar
         
         tableView.delegate = self
@@ -52,8 +55,7 @@ class SearchMembersViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        search = false
-        
+        noUsersView.isHidden = false
         UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Georgia", size: 17)!], for: .normal)
         
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Georgia", size: 20)!]
@@ -108,10 +110,10 @@ class SearchMembersViewController: UIViewController {
 extension SearchMembersViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchController.isActive && searchController.searchBar.text != "" {
+        //if searchController.isActive && searchController.searchBar.text != "" {
             return filteredUsers.count
-        }
-        return users.count
+        //}
+        //return 0
     }
     
     
@@ -119,19 +121,19 @@ extension SearchMembersViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchTableViewCell", for: indexPath) as! SearchTableViewCell
         
         var user : User
-        if searchController.isActive && searchController.searchBar.text != "" {
+        //if searchController.isActive && searchController.searchBar.text != "" {
             user = filteredUsers[indexPath.row]
-        } else {
-            user = users[indexPath.row]
-        }
+//        } else {
+//            user = users[indexPath.row]
+//        }
         
         cell.usernameLabel.text = user.username
         cell.nameLabel.text = user.name
-        cell.isUserInteractionEnabled = false
-        if search == true {
-        cell.coverView.isHidden = true
-        cell.isUserInteractionEnabled = true
-        }
+        //cell.isUserInteractionEnabled = false
+//        if search == true {
+//        cell.coverView.isHidden = true
+//        cell.isUserInteractionEnabled = true
+//        }
         
         return cell
     }
@@ -144,18 +146,38 @@ extension SearchMembersViewController: UITableViewDelegate {
     }
 }
 
-extension SearchMembersViewController : UISearchResultsUpdating {
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        filterContentForSearchText(searchText: searchController.searchBar.text!)
-    }
-}
+//extension SearchMembersViewController : UISearchResultsUpdating {
+//    
+//    func updateSearchResults(for searchController: UISearchController) {
+//        filterContentForSearchText(searchText: searchController.searchBar.text!)
+//    }
+//}
 
 extension SearchMembersViewController : UISearchBarDelegate {
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        noUsersView.isHidden = true
+    }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("hi")
-        search = true
+//        print("hi")
+//        search = true
+        filterContentForSearchText(searchText: searchController.searchBar.text!)
+        noUsersView.isHidden = true
         tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        filteredUsers = []
+        noUsersView.isHidden = false
+        tableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            filteredUsers = []
+            tableView.reloadData()
+        }
     }
 }
 

@@ -11,14 +11,20 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-class EditProfileViewController : UIViewController {
+class EditProfileViewController : UIViewController, UITextViewDelegate {
     
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var aboutMeTextField: UITextField!
+    @IBOutlet weak var aboutMeTextField: UITextView!
+    
+    @IBAction func screenTapped(_ sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+
+    }
     
     @IBOutlet weak var barButton: UIBarButtonItem!
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -34,8 +40,17 @@ class EditProfileViewController : UIViewController {
         nameTextField.text = User.current.name
         usernameTextField.text = User.current.username
         aboutMeTextField.text = User.current.aboutMe
+        //adjustUITextViewHeight(arg: aboutMeTextField)
+        
         
     }
+   
+//    func adjustUITextViewHeight(arg : UITextView)
+//    {
+//        arg.translatesAutoresizingMaskIntoConstraints = true
+//        arg.sizeToFit()
+//        //arg.isScrollEnabled = true
+//    }
     
 
     @IBAction func editSaved(_ sender: UIBarButtonItem) {

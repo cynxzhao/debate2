@@ -41,6 +41,13 @@ class SentNewsTableViewController: UITableViewController {
             self.news.append(new!)
 
             }
+            if self.news.count > 70 {
+                GroupService.deletefromGroup(groupID: self.group!.id, url: self.news[0].url, completion: { 
+                    self.news.remove(at: 0)
+
+                })
+            }
+            
             for n in self.news {
                 n.date2 = n.date.toDateTime1()
             }
@@ -121,7 +128,29 @@ class SentNewsTableViewController: UITableViewController {
         }
         
         cell.titleLabel.text = new.title
-        cell.dateLabel.text = new.date2!.toString(dateFormat: "dd-MMM-yyyy HH:mm:ss")
+        let now1 = new.date2!.timeIntervalSinceNow
+        let now = now1 - 25200
+        if convertSecondToDateAgo(seconds: Int(-now)).contains("-") {
+            cell.dateLabel.text = ""
+        } else {
+            cell.dateLabel.text = convertSecondToDateAgo(seconds: Int(-now))
+        }
+        //        cell.dateLabel.text = new.date2!.toString1(dateFormat: "dd-MMM-yyyy HH:mm:ss")
+        
+        //        let now1 = new.date2!.timeIntervalSinceNow
+        //        let now = now1 - 25200
+        //        print(convertSecondToDateAgo(seconds: Int(-now)))
+        //        cell.urlLabel.text = new.url
+        //
+        //        var separatorLineView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 0.8))
+        //        /// change size as you need.
+        //        separatorLineView.backgroundColor = UIColor(red:0.16, green:0.16, blue:0.50, alpha:1.0)
+        //
+        //
+        //        // you can also put image here
+        //        cell.contentView.addSubview(separatorLineView)
+    
+//        cell.dateLabel.text = new.date2!.toString(dateFormat: "dd-MMM-yyyy HH:mm:ss")
         var allTags = ""
         for tag in new.tags ?? [] {
             allTags += "\(tag) "
@@ -136,6 +165,9 @@ class SentNewsTableViewController: UITableViewController {
             cell.image1.setImageWith(picURL!)
         }
         
+        print (new.date2)
+        print(now1)
+        print(Date())
         
         let ref = Database.database().reference().child("users").child(new.sender!).child("username")
         
@@ -146,7 +178,22 @@ class SentNewsTableViewController: UITableViewController {
     
         return cell
     }
-    
+
+
+func convertSecondToDateAgo(seconds: Int) -> String {
+    var result: String?
+    if(seconds <= 59) {
+        result = "\(seconds) s"
+    } else if(seconds/60 <= 59) {
+        result = "\(seconds/60) m"
+    } else if (seconds/3600 <= 23) {
+        result = "\(seconds/3600) h"
+    } else {
+        result = "\(seconds/86400) d"
+    }
+    return result!
+}
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             if identifier == "toMembersList" {

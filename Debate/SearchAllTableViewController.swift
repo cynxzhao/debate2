@@ -18,15 +18,18 @@ class SearchAllTableViewController: UITableViewController {
     var newMember : User?
     let searchController = UISearchController(searchResultsController: nil)
 
+    @IBOutlet weak var noUsersView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchController.searchResultsUpdater = self as! UISearchResultsUpdating
+//        searchController.searchResultsUpdater = self as! UISearchResultsUpdating
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
-        searchController.searchBar.placeholder = "Search by username"
+        searchController.searchBar.placeholder = "Search for users with username"
         tableView.tableHeaderView = searchController.searchBar
+        searchController.searchBar.delegate = self
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -45,6 +48,7 @@ class SearchAllTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        noUsersView.isHidden = false
         let ref = Database.database().reference().child("users")
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
@@ -70,23 +74,24 @@ class SearchAllTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchController.isActive && searchController.searchBar.text != "" {
+//        if searchController.isActive && searchController.searchBar.text != "" {
             return filteredUsers.count
-        }
-        return users.count
+//        }
+//        return users.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchAllTableViewCell", for: indexPath) as! SearchAllTableViewCell
         
         var user : User
-        if searchController.isActive && searchController.searchBar.text != "" {
+//        if searchController.isActive && searchController.searchBar.text != "" {
             user = filteredUsers[indexPath.row]
-        } else {
-            user = users[indexPath.row]
-        }
+//        } else {
+//            user = users[indexPath.row]
+//        }
         
         cell.usernameLabel.text = user.username
+        cell.nameLabel.text = user.name
         
         return cell
     }
@@ -174,10 +179,37 @@ class SearchAllTableViewController: UITableViewController {
     */
 
 }
-
-extension SearchAllTableViewController : UISearchResultsUpdating {
+extension SearchAllTableViewController : UISearchBarDelegate {
     
-    func updateSearchResults(for searchController: UISearchController) {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        noUsersView.isHidden = true
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        //        print("hi")
+        //        search = true
         filterContentForSearchText(searchText: searchController.searchBar.text!)
+        noUsersView.isHidden = true
+        tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        filteredUsers = []
+        noUsersView.isHidden = false
+        tableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            filteredUsers = []
+            tableView.reloadData()
+        }
     }
 }
+
+
+//extension SearchAllTableViewController : UISearchResultsUpdating {
+//    
+//    func updateSearchResults(for searchController: UISearchController) {
+//        filterContentForSearchText(searchText: searchController.searchBar.text!)
+//    }
+//}

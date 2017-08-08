@@ -12,11 +12,14 @@ import FirebaseDatabase
 class HomeTableViewController: UITableViewController {
         
     var groups = [Group]()
+    @IBOutlet weak var noGroupsView: UIView!
     
     @IBOutlet weak var barButton: UIBarButtonItem!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        noGroupsView.isHidden = true
+        
         self.tabBarController?.tabBar.tintColor = UIColor.black
 
         actOnViewController()
@@ -52,6 +55,13 @@ class HomeTableViewController: UITableViewController {
                     
                         self.tableView.reloadData()
                         groupIDs = []
+                    print(self.groups.count)
+                    if self.groups.count == 0 {
+                        self.noGroupsView.isHidden = false
+                    } else {
+                        self.noGroupsView.isHidden = true
+                    }
+                    
                 })
             }
         })

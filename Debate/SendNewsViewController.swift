@@ -17,6 +17,10 @@ class SendNewsViewController: UIViewController {
     var group : Group?
     var news : News?
     
+    @IBAction func screenTapped(_ sender: Any) {
+        self.view.endEditing(true)
+    }
+    
     var text : String?
     var tagsArr = [String]()
     

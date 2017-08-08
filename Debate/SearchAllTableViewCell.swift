@@ -11,6 +11,7 @@ import UIKit
 class SearchAllTableViewCell: UITableViewCell {
 
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

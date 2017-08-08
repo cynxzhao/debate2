@@ -86,5 +86,24 @@ struct GroupService {
         })
     }
     
-    
+    static func deletefromGroup(groupID: String, url: String, completion: @escaping () -> Void) {
+        let ref = Database.database().reference().child("groups").child(groupID).child("news")
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
+                else { return }
+            for snap in snapshot {
+                let new = News(snapshot: snap)
+                if url == new!.url {
+                    ref.child(snap.key).removeValue { (error, ref) in
+                        //print ("first")
+                        if error != nil {
+                            print("there is an error")
+                            print("error \(error!.localizedDescription)")
+                        }
+                    }
+                }
+            }
+            
+        })
+    }
 }

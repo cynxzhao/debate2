@@ -673,9 +673,6 @@ class AllNewsTableViewController: UITableViewController {
         
         MBProgressHUD.showAdded(to: self.view, animated: true)
         
-//        myRefreshControl.addTarget(self, action: #selector(reload), for: .valueChanged)
-//        tableView.addSubview(myRefreshControl)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -808,19 +805,6 @@ class AllNewsTableViewController: UITableViewController {
             dispatchGroup.leave()
         }
         
-        // Wall Street Journal
-//        dispatchGroup.enter()
-//        Alamofire.request("https://newsapi.org/v1/articles?source=the-wall-street-journal&apiKey=069c5469ce9a4cce87b2efb29a06bf90").responseJSON { response in
-//            let LnewsData = JSON(json: response.result.value!)
-//            LData = LnewsData["articles"].arrayValue
-//            
-//            for l in LData! {
-//                let ll = News(otherjson: l)
-//                self.news.append(ll)
-//            }
-//            dispatchGroup.leave()
-//        }
-        
         // Huffington Post
         dispatchGroup.enter()
         Alamofire.request("https://newsapi.org/v1/articles?source=the-huffington-post&apiKey=069c5469ce9a4cce87b2efb29a06bf90").responseJSON { response in
@@ -901,7 +885,18 @@ class AllNewsTableViewController: UITableViewController {
         }
     
         cell.titleLabel.text = new.title
-        cell.dateLabel.text = new.date2!.toString1(dateFormat: "dd-MMM-yyyy HH:mm:ss")
+        let now1 = new.date2!.timeIntervalSinceNow
+        let now = now1 - 25200
+        if convertSecondToDateAgo(seconds: Int(-now)).contains("-") {
+            cell.dateLabel.text = ""
+        } else {
+            cell.dateLabel.text = convertSecondToDateAgo(seconds: Int(-now))
+        }
+//        cell.dateLabel.text = new.date2!.toString1(dateFormat: "dd-MMM-yyyy HH:mm:ss")
+        
+//        let now1 = new.date2!.timeIntervalSinceNow
+//        let now = now1 - 25200
+//        print(convertSecondToDateAgo(seconds: Int(-now)))
 //        cell.urlLabel.text = new.url
 //        
 //        var separatorLineView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 0.8))
@@ -913,6 +908,21 @@ class AllNewsTableViewController: UITableViewController {
 //        cell.contentView.addSubview(separatorLineView)
         
         return cell
+    }
+    
+    
+    func convertSecondToDateAgo(seconds: Int) -> String {
+        var result: String?
+        if(seconds <= 59) {
+            result = "\(seconds) s"
+        } else if(seconds/60 <= 59) {
+            result = "\(seconds/60) m"
+        } else if (seconds/3600 <= 23) {
+            result = "\(seconds/3600) h"
+        } else {
+            result = "\(seconds/86400) d"
+        }
+        return result!
     }
     
     override func viewDidDisappear(_ animated: Bool) {

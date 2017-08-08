@@ -21,17 +21,33 @@
                         <color key="tintColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search by title" id="mlm-J0-LMm">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="Nab-oO-r2U">
+                            <rect key="frame" x="0.0" y="168" width="375" height="80"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing saved yet! Articles you save from the News tab will appear here." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaS-GS-8Xk">
+                                    <rect key="frame" x="48" y="21" width="278" height="38"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="278" id="akU-s9-gZh"/>
+                                        <constraint firstAttribute="height" constant="38" id="xJg-2V-Kbc"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.1169593069" green="0.11529790819999999" blue="0.12095100640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="vaS-GS-8Xk" firstAttribute="centerX" secondItem="Nab-oO-r2U" secondAttribute="centerX" id="1hX-ZD-hD5"/>
+                                <constraint firstItem="vaS-GS-8Xk" firstAttribute="centerY" secondItem="Nab-oO-r2U" secondAttribute="centerY" id="dAV-rK-2bD"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="personalArchivesTableViewCell" id="M3s-o2-eFa" customClass="PersonalArchivesTableViewCell" customModule="Debate" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="140"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M3s-o2-eFa" id="Agq-DT-JNw">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="139.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dE-h4-7B3">
@@ -85,6 +101,9 @@
                     <tabBarItem key="tabBarItem" title="Saved" image="file" id="6ED-ur-mc9"/>
                     <navigationItem key="navigationItem" title="Saved" id="O2Q-BK-lHV"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="noNews" destination="Nab-oO-r2U" id="Qrk-G2-xDF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Odz-0l-MLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,7 +155,7 @@
                 <navigationController title="Archives" automaticallyAdjustsScrollViewInsets="NO" id="gRh-lR-vGz" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="U8h-Vh-sqx"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="o03-J4-1dc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="o03-J4-1dc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

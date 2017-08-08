@@ -232,7 +232,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qX5-Nx-Uu9">
-                                            <rect key="frame" x="8" y="108.5" width="114" height="19"/>
+                                            <rect key="frame" x="28" y="108.5" width="94" height="19"/>
                                             <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -244,13 +244,22 @@
                                                 <constraint firstAttribute="height" constant="120" id="lVM-YB-oU4"/>
                                             </constraints>
                                         </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="Cr1-6F-mem">
+                                            <rect key="frame" x="8" y="111" width="17" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="X3L-41-Cza"/>
+                                                <constraint firstAttribute="width" constant="17" id="v4M-tj-bqn"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="VjF-lc-8Pd" firstAttribute="trailing" secondItem="LfZ-KN-EOL" secondAttribute="trailingMargin" id="Cx1-OQ-Olu"/>
+                                        <constraint firstItem="Cr1-6F-mem" firstAttribute="leading" secondItem="LfZ-KN-EOL" secondAttribute="leadingMargin" id="DKp-YO-NT5"/>
                                         <constraint firstItem="O7Y-oa-Vvn" firstAttribute="top" secondItem="LfZ-KN-EOL" secondAttribute="top" constant="5" id="aLJ-D2-aGR"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="qX5-Nx-Uu9" secondAttribute="bottom" constant="4" id="eK1-LG-8vL"/>
-                                        <constraint firstItem="qX5-Nx-Uu9" firstAttribute="leading" secondItem="LfZ-KN-EOL" secondAttribute="leadingMargin" id="jcC-aJ-EjI"/>
                                         <constraint firstItem="VjF-lc-8Pd" firstAttribute="leading" secondItem="qX5-Nx-Uu9" secondAttribute="trailing" constant="10" id="jsF-wa-Ing"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Cr1-6F-mem" secondAttribute="bottom" constant="4" id="mvj-DM-4MQ"/>
+                                        <constraint firstItem="qX5-Nx-Uu9" firstAttribute="leading" secondItem="Cr1-6F-mem" secondAttribute="trailing" constant="3" id="son-4A-dxV"/>
                                         <constraint firstItem="VjF-lc-8Pd" firstAttribute="leading" secondItem="O7Y-oa-Vvn" secondAttribute="trailing" constant="10" id="uSi-Gr-Yv1"/>
                                         <constraint firstItem="VjF-lc-8Pd" firstAttribute="top" secondItem="LfZ-KN-EOL" secondAttribute="topMargin" constant="3" id="x5z-ns-MeG"/>
                                         <constraint firstItem="O7Y-oa-Vvn" firstAttribute="leading" secondItem="LfZ-KN-EOL" secondAttribute="leading" constant="8" id="xky-Vh-SNH"/>
@@ -272,7 +281,7 @@
                             <outlet property="delegate" destination="Nox-7z-Dzz" id="wkU-5E-RPl"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="All News" image="newspaper" id="IGl-7H-mIv"/>
+                    <tabBarItem key="tabBarItem" title="News" image="newspaper" id="IGl-7H-mIv"/>
                     <navigationItem key="navigationItem" title="All News" id="Emg-2a-aD7"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -447,6 +456,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="QhK-wG-pMG" firstAttribute="leading" secondItem="yRV-wz-g52" secondAttribute="leading" constant="20" id="0JE-PF-fc4"/>
                             <constraint firstItem="SUt-Dr-d7Q" firstAttribute="top" secondItem="gJp-Oc-lFP" secondAttribute="bottom" constant="8" id="6Pk-2J-anV"/>
@@ -498,6 +508,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="clock" width="29" height="30"/>
         <image name="newspaper" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
