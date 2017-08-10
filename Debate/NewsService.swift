@@ -68,12 +68,23 @@ struct NewsService {
         }
     }
     
+    static func sendNews(groupID: String, date: String, completion: @escaping () -> Void) {
+        let ref = Database.database().reference().child("groups").child(groupID)
+        ref.updateChildValues(["date" : date]) { (error, ref) in
+            
+            if let error = error {
+                assertionFailure(error.localizedDescription)
+            }
+            
+        }
+
+    }
+    
     static func deleteFromArchives(article: String) {
         
         Database.database().reference().child("news").child(User.current.uid).child(article).removeValue { (error, ref) in
             //print ("first")
             if error != nil {
-                print("there is an error")
                 print("error \(error!.localizedDescription)")
             }
         }

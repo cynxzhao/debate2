@@ -71,7 +71,6 @@ class EditProfileViewController : UIViewController, UITextViewDelegate {
             let ref1 = Database.database().reference()
             ref1.child("users").queryOrdered(byChild: "username").queryEqual(toValue: usernameTextField.text).observeSingleEvent(of: .value, with: { snapshot in
                 if snapshot.exists(){
-                    print("it exists")
                     usernameTaken = true
                     let alert = UIAlertController(title: "Error", message: "Username already exists, so it could not be updated", preferredStyle: UIAlertControllerStyle.alert)
                     alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))

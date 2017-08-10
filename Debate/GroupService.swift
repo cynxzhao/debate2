@@ -16,7 +16,7 @@ struct GroupService {
     static var allGroupIDs = [String]()
     // need to add a function here that goes through "users" under the group and goes through all users to see if their usernames match and adds the group ID to their "groups"
     
-    static func create(_ firUser: FIRUser, groupName: String, users: [String], completion: @escaping (Group?) -> Void) {
+    static func create(_ firUser: FIRUser, groupName: String, users: [String], date: String, completion: @escaping (Group?) -> Void) {
 
         var userAttrs = ["groups" : allGroupIDs]
         let userAttrs2 = ["groupName" : groupName,
@@ -33,7 +33,8 @@ struct GroupService {
             } else {
                 let userAttrs3 = ["groupName" : groupName,
                                   "id": ref1.key,
-                                  "users" : users] as [String : Any]
+                                  "users" : users,
+                                  "date" : date] as [String : Any]
                 let ref3 = Database.database().reference().child("groups").child(ref1.key)
                 ref3.setValue(userAttrs3)
                 ref3.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -97,7 +98,6 @@ struct GroupService {
                     ref.child(snap.key).removeValue { (error, ref) in
                         //print ("first")
                         if error != nil {
-                            print("there is an error")
                             print("error \(error!.localizedDescription)")
                         }
                     }

@@ -157,18 +157,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6W-Gm-qoG">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmt-nO-u6X">
-                                        <rect key="frame" x="114" y="30.5" width="147" height="49"/>
-                                        <fontDescription key="fontDescription" name="MORVA" family="MORVA" pointSize="49"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up As New User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="qmt-nO-u6X">
+                                        <rect key="frame" x="26.5" y="46.5" width="322" height="36"/>
+                                        <fontDescription key="fontDescription" name="MORVA" family="MORVA" pointSize="36"/>
                                         <color key="textColor" red="0.17431947910000001" green="0.17431947910000001" blue="0.17431947910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="qmt-nO-u6X" firstAttribute="centerY" secondItem="n6W-Gm-qoG" secondAttribute="centerY" multiplier="6/5" id="Jpb-ly-CVb"/>
+                                    <constraint firstItem="qmt-nO-u6X" firstAttribute="leading" secondItem="n6W-Gm-qoG" secondAttribute="leading" constant="26.5" id="Llk-MM-ma8"/>
                                     <constraint firstAttribute="height" constant="92" id="Xze-lz-c7Q"/>
                                     <constraint firstItem="qmt-nO-u6X" firstAttribute="centerX" secondItem="n6W-Gm-qoG" secondAttribute="centerX" id="YmH-6z-1zg"/>
+                                    <constraint firstItem="qmt-nO-u6X" firstAttribute="centerY" secondItem="n6W-Gm-qoG" secondAttribute="centerY" multiplier="7/5" id="fQd-lr-E4d"/>
+                                    <constraint firstAttribute="trailing" secondItem="qmt-nO-u6X" secondAttribute="trailing" constant="26.5" id="zc9-9P-Hnm"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IXb-U9-b4i">

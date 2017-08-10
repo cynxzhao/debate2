@@ -107,6 +107,7 @@ struct UserService {
     
     static func updateUsername(new: String, completion: @escaping (Int?) -> Void) {
         let oldName = User.current.username
+        
         let ref2 = Database.database().reference().child("users").child(User.current.uid).child("groups")
         ref2.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
@@ -122,9 +123,11 @@ struct UserService {
                         for user in users {
                             allUsers.append((user.value as? String)!)
                         }
-                        var index = allUsers.index(of: oldName)
-                        allUsers[index!] = new
-                        ref3.setValue(allUsers)
+                        
+                            var index = allUsers.index(of: oldName)
+                            allUsers[index!] = new
+                            ref3.setValue(allUsers)
+
                     })
                 } else {
                 }

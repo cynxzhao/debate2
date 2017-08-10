@@ -489,7 +489,6 @@ class AllNewsTableViewController: UITableViewController {
             dispatchGroup.notify(queue: .main, execute: {
                 
                 var x = 0
-                
                 for n in self.news {
                     if n.date.characters.count != 20 {
                         self.news.remove(at: x)

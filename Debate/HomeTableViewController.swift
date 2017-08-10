@@ -52,10 +52,12 @@ class HomeTableViewController: UITableViewController {
                             }
                         }
                     }
+                        self.groups.sort(by: { (group1, group2) -> Bool in
+                            (group1.lastDate?.toDateTime4())! > (group2.lastDate?.toDateTime4())!
+                        })
                     
                         self.tableView.reloadData()
                         groupIDs = []
-                    print(self.groups.count)
                     if self.groups.count == 0 {
                         self.noGroupsView.isHidden = false
                     } else {
@@ -200,5 +202,24 @@ class HomeTableViewController: UITableViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    
+}
+
+extension String
+{
+    func toDateTime4() -> Date
+    {
+        //Create Date Formatter
+        let dateFormatter = DateFormatter()
+        
+        //Specify Format of String to Parse
+        dateFormatter.dateFormat = "dd-MMM-yyyy HH:mm:ss"
+        
+        //Parse into NSDate
+        let dateFromString : Date = dateFormatter.date(from: self)! as Date
+        
+        //Return Parsed Date
+        return dateFromString
+    }
     
 }

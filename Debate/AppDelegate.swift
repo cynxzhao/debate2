@@ -69,7 +69,6 @@ extension AppDelegate {
             let user = NSKeyedUnarchiver.unarchiveObject(with: userData) as? User {
             
             User.setCurrent(user)
-            print(Auth.auth().currentUser?.uid)
             let storyboard = UIStoryboard(name: "Groups", bundle: nil)
             
             if let initialViewController = storyboard.instantiateInitialViewController() {

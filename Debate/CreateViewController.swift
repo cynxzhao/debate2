@@ -51,7 +51,7 @@ class CreateViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             } else {
                 groupNameTaken = false
-                GroupService.create(firUser, groupName: groupName, users: users) { (group1) in
+                GroupService.create(firUser, groupName: groupName, users: users, date: Date().toString3(dateFormat: "dd-MMM-yyyy HH:mm:ss")) { (group1) in
                     guard let group = group1 else { return }
                     
                     for u in self.users2 {
@@ -157,6 +157,17 @@ extension CreateViewController: UITableViewDelegate {
             }
 
         }
-           }
+    }
 }
+
+extension Date
+{
+    func toString3( dateFormat format  : String ) -> String
+    {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: self)
+}
+}
+
 

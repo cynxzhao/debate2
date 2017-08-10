@@ -71,7 +71,7 @@ class SentNewsTableViewController: UITableViewController {
         searchController.searchResultsUpdater = self as! UISearchResultsUpdating
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
-        searchController.searchBar.placeholder = "Search by tags"
+        searchController.searchBar.placeholder = "Search by tags or title"
         tableView.tableHeaderView = searchController.searchBar
 
         self.navigationItem.title = group!.groupName
@@ -90,7 +90,9 @@ class SentNewsTableViewController: UITableViewController {
             for n in new.tags ?? [] {
                 allTags += "\(n) "
             }
-            print(allTags)
+            
+            allTags += new.title
+            
             return allTags.lowercased().contains(searchText.lowercased())
 
             }
@@ -164,10 +166,6 @@ class SentNewsTableViewController: UITableViewController {
             let picURL = URL(string : "https://static.pexels.com/photos/242236/pexels-photo-242236.jpeg")
             cell.image1.setImageWith(picURL!)
         }
-        
-        print (new.date2)
-        print(now1)
-        print(Date())
         
         let ref = Database.database().reference().child("users").child(new.sender!).child("username")
         

@@ -17,9 +17,7 @@ class SendNewsViewController: UIViewController {
     var group : Group?
     var news : News?
     
-    @IBAction func screenTapped(_ sender: Any) {
-        self.view.endEditing(true)
-    }
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var text : String?
     var tagsArr = [String]()
@@ -34,6 +32,9 @@ class SendNewsViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+//        scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -94,6 +95,9 @@ class SendNewsViewController: UIViewController {
             
             NewsService.create(group: group!, title: news!.title, date: news!.date, url: news!.url, tags: [" "], sender: User.current, imageURL: news!.imageURL!, completion: { (news) in
                 guard let news = news else { return }
+            })
+            
+            NewsService.sendNews(groupID: group!.id, date: Date().toString4(dateFormat: "dd-MMM-yyyy HH:mm:ss"), completion: {
             })
             self.performSegue(withIdentifier: "toAll", sender: nil)
 
@@ -182,4 +186,15 @@ extension String {
     func removingWhitespaces() -> String {
         return components(separatedBy: .whitespaces).joined()
     }
+}
+
+extension Date
+{
+    func toString4( dateFormat format  : String ) -> String
+    {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: self)
+    }
+    
 }
