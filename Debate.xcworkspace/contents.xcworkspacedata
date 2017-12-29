@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Debate.xcodeproj">
+      location = "group:/Users/cindyzhao/Downloads/debate-master 2/Debate.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
